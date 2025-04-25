@@ -55,7 +55,6 @@ const bubbleWaffles = [
 export default function LandingPage() {
   return (
     <div className="flex min-h-screen flex-col bg-[#f8f9fa]">
-      {/* Header */}
       <header className="sticky top-0 z-50 w-full bg-[#013e5e] transition-all">
         <div className="flex h-16 items-center justify-between">
           <Link href="#" className="flex items-center gap-2 ml-4">
@@ -76,15 +75,16 @@ export default function LandingPage() {
       </header>
 
       <main className="flex-1">
-        {/* Hero Section con diseño disruptivo */}
         <section className="relative overflow-hidden bg-[#013e5e] py-20 md:py-32">
           <div className="absolute inset-0 overflow-hidden">
-            {/* Burbujas decorativas */}
-            <div className="absolute top-10 left-10 h-20 w-20 rounded-full bg-[#ff8000]/20"></div>
-            <div className="absolute top-40 right-20 h-32 w-32 rounded-full bg-[#ff8000]/30"></div>
-            <div className="absolute bottom-10 left-1/4 h-24 w-24 rounded-full bg-[#ff8000]/20"></div>
-            <div className="absolute top-1/3 right-1/3 h-16 w-16 rounded-full bg-[#ff8000]/30"></div>
-            <div className="absolute bottom-20 right-10 h-28 w-28 rounded-full bg-[#ff8000]/20"></div>
+            <div className="bubble"></div>
+            <div className="bubble absolute top-10 left-10 h-20 w-20 rounded-full bg-[#ff8000]/20"></div>
+            <div className="bubble absolute top-40 right-20 h-32 w-32 rounded-full bg-[#ff8000]/30"></div>
+            <div className="bubble absolute bottom-10 left-1/4 h-24 w-24 rounded-full bg-[#ff8000]/20"></div>
+            <div className="bubble absolute top-1/3 right-1/3 h-16 w-16 rounded-full bg-[#ff8000]/30"></div>
+            <div className="bubble absolute bottom-20 right-10 h-28 w-28 rounded-full bg-[#ff8000]/20"></div>
+            <div className="bubble absolute top-20 right-50 h-32 w-32 rounded-full bg-[#ff8000]/30"></div>
+            <div className="bubble absolute bottom-40 left-1/2 h-24 w-24 rounded-full bg-[#ff8000]/20"></div>
           </div>
           <div className="relative px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12">
@@ -117,14 +117,12 @@ export default function LandingPage() {
                     className="rounded-full object-cover"
                   />
                 </div>
-                {/* Pajita decorativa */}
                 <div className="absolute -right-4 -top-10 h-40 w-8 rotate-12 rounded-full bg-[#013e5e] shadow-lg"></div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Bubble Tea Section con Carrusel */}
         <section id="bubble-tea" className="w-full py-12 md:py-24">
           <div className="px-4 md:px-6">
             <ProductCarousel
@@ -135,7 +133,6 @@ export default function LandingPage() {
           </div>
         </section>
 
-        {/* Bubble Waffle Section con Carrusel */}
         <section id="bubble-waffle" className="w-full py-12 md:py-24 bg-[#013e5e]/5">
           <div className="px-4 md:px-6">
             <ProductCarousel
@@ -146,11 +143,9 @@ export default function LandingPage() {
           </div>
         </section>
 
-        {/* Ubicación y Horarios Section */}
         <section id="nosotros" className="w-full py-12 md:py-24">
           <div className="px-4 md:px-6">
             <div className="grid gap-10 lg:grid-cols-2">
-              {/* Ubicación */}
               <div className="space-y-4">
                 <div className="inline-flex items-center rounded-full bg-[#013e5e]/10 px-3 py-1 text-sm text-[#013e5e]">
                   <MapPin className="mr-1 h-4 w-4" />
@@ -176,7 +171,6 @@ export default function LandingPage() {
                 </div>
               </div>
 
-              {/* Horarios */}
               <div id="horarios" className="space-y-4">
                 <div className="inline-flex items-center rounded-full bg-[#ff8000]/10 px-3 py-1 text-sm text-[#ff8000]">
                   <Clock className="mr-1 h-4 w-4" />
@@ -225,10 +219,8 @@ export default function LandingPage() {
           </div>
         </section>
 
-        {/* Sección decorativa */}
         <section className="relative overflow-hidden bg-[#ff8000] py-16">
           <div className="absolute inset-0 overflow-hidden">
-            {/* Burbujas decorativas */}
             <div className="absolute top-10 left-10 h-20 w-20 rounded-full bg-[#013e5e]/20"></div>
             <div className="absolute top-40 right-20 h-32 w-32 rounded-full bg-[#013e5e]/30"></div>
             <div className="absolute bottom-10 left-1/4 h-24 w-24 rounded-full bg-[#013e5e]/20"></div>
@@ -244,7 +236,6 @@ export default function LandingPage() {
         </section>
       </main>
 
-      {/* Footer */}
       <footer className="w-full border-t py-6 md:py-12">
         <div className="px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
