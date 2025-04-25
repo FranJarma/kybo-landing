@@ -8,126 +8,70 @@ import { TikTokIcon } from "@/components/tiktok-icon"
 // Definición de productos
 const bubbleTeas = [
   {
-    name: "Matcha Bubble Tea",
-    description: "Té verde matcha con perlas de tapioca",
-    image: "/placeholder.svg?height=300&width=300",
-    price: "$850",
+    name: "No sé que es, pero sabe rico",
+    description: "Té verde matcha con leche, dulce y refrescante. ",
+    image: "/images/matcha.webp"
   },
   {
-    name: "Taro Bubble Tea",
-    description: "Cremoso té de taro con perlas de tapioca",
-    image: "/placeholder.svg?height=300&width=300",
-    price: "$850",
+    name: "Se nos fué la cabeza",
+    description: "Taro cremoso, con notas de vainilla y batata dulce",
+    image: "/images/taro.webp"
   },
   {
-    name: "Frutilla Bubble Tea",
-    description: "Refrescante té de frutilla con perlas de tapioca",
-    image: "/placeholder.svg?height=300&width=300",
-    price: "$850",
-  },
-  {
-    name: "Maracuyá Bubble Tea",
-    description: "Exótico té de maracuyá con perlas de tapioca",
-    image: "/placeholder.svg?height=300&width=300",
-    price: "$850",
-  },
-  {
-    name: "Mango Bubble Tea",
-    description: "Dulce té de mango con perlas de tapioca",
-    image: "/placeholder.svg?height=300&width=300",
-    price: "$850",
-  },
-  {
-    name: "Chocolate Bubble Tea",
-    description: "Cremoso té de chocolate con perlas de tapioca",
-    image: "/placeholder.svg?height=300&width=300",
-    price: "$850",
+    name: "Kybo, the original",
+    description: "Té negro infusionado con leche y endulzado al punto perfecto",
+    image: "/images/original-kybo.webp"
   },
 ]
 
 const bubbleWaffles = [
   {
-    name: "Waffle Clásico",
-    description: "Waffle con helado de vainilla y frutos rojos",
-    image: "/placeholder.svg?height=300&width=300",
-    price: "$950",
+    name: "No lo entenderías",
+    description: "Masa de choco oreo, servido con Nutella, frutas frescas y bañado con crema chantilly (una locura)",
+    image: "/images/no-lo-entenderias.webp"
   },
   {
-    name: "Waffle Chocolate",
-    description: "Waffle con helado de chocolate y salsa de chocolate",
-    image: "/placeholder.svg?height=300&width=300",
-    price: "$950",
+    name: "Éste (por fa)",
+    description: "Masa dulce, con crema chantilly y mermelada casera de frutos rojos",
+    image: "/images/este-porfa.webp"
   },
   {
-    name: "Waffle Dulce de Leche",
-    description: "Waffle con helado de dulce de leche y banana",
-    image: "/placeholder.svg?height=300&width=300",
-    price: "$950",
+    name: "Tranqui, pero va",
+    description: "Masa común o de chipa, jamón natural & queso fundido",
+    image: "/images/tranqui-pero-va.webp"
   },
   {
-    name: "Waffle Frutal",
-    description: "Waffle con helado de frutilla y frutas frescas",
-    image: "/placeholder.svg?height=300&width=300",
-    price: "$950",
+    name: "¿Esto está chequeado?",
+    description: "Masa común o de chipa, jamón ibérico, tomate cherry y queso fundido",
+    image: "/images/esto-esta-chequeado.webp"
   },
   {
-    name: "Waffle Oreo",
-    description: "Waffle con helado de vainilla y galletas Oreo",
-    image: "/placeholder.svg?height=300&width=300",
-    price: "$950",
-  },
-  {
-    name: "Waffle Nutella",
-    description: "Waffle con helado de chocolate y Nutella",
-    image: "/placeholder.svg?height=300&width=300",
-    price: "$950",
-  },
+    name: "Dos, please",
+    description: "Huevo y palta con un toque de pimienta negra.",
+    image: "/images/dos-please.webp"
+  }
 ]
 
 export default function LandingPage() {
   return (
     <div className="flex min-h-screen flex-col bg-[#f8f9fa]">
       {/* Header */}
-      <header className="sticky top-0 z-50 w-full border-b bg-[#013e5e] backdrop-blur supports-[backdrop-filter]:bg-[#013e5e]/95">
+      <header className="sticky top-0 z-50 w-full bg-[#013e5e] transition-all">
         <div className="flex h-16 items-center justify-between">
-          <Link href="#" className="flex items-center gap-2">
-            <Image src="/images/logo.webp" alt="Kybo Logo" width={100} height={40} className="h-auto" />
+          <Link href="#" className="flex items-center gap-2 ml-4">
+            <Image src="/images/logo2.webp" alt="Kybo Logo" width={100} height={50} className="h-auto" />
           </Link>
-          <nav className="hidden md:flex gap-6">
-            <Link href="#bubble-tea" className="text-sm font-medium text-white hover:text-[#ff8000]">
-              Bubble Tea
+          <nav className="flex gap-6 mr-4">
+            <Link href="#bubble-tea" className="text-sm md:text-lg font-medium text-white hover:text-[#ff8000]">
+              Bubble Teas
             </Link>
-            <Link href="#bubble-waffle" className="text-sm font-medium text-white hover:text-[#ff8000]">
-              Bubble Waffle
+            <Link href="#bubble-waffle" className="text-sm md:text-lg font-medium text-white hover:text-[#ff8000]">
+              Bubble Waffles
             </Link>
-            <Link href="#ubicacion" className="text-sm font-medium text-white hover:text-[#ff8000]">
-              Ubicación
-            </Link>
-            <Link href="#horarios" className="text-sm font-medium text-white hover:text-[#ff8000]">
-              Horarios
+            <Link href="#nosotros" className="text-sm md:text-lg font-medium text-white hover:text-[#ff8000]">
+              Nosotros
             </Link>
           </nav>
-          <div className="flex items-center gap-4 md:hidden">
-            <Button variant="ghost" size="icon" className="text-white">
-              <span className="sr-only">Menú</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="h-6 w-6"
-              >
-                <line x1="4" x2="20" y1="12" y2="12" />
-                <line x1="4" x2="20" y1="6" y2="6" />
-                <line x1="4" x2="20" y1="18" y2="18" />
-              </svg>
-            </Button>
-          </div>
         </div>
       </header>
 
@@ -145,25 +89,28 @@ export default function LandingPage() {
           <div className="relative px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12">
               <div className="flex flex-col justify-center space-y-4 text-white">
-                <div className="space-y-2">
+                <div className="space-y-2 md:max-w-8/12">
                   <h1 className="text-4xl font-bold tracking-wide sm:text-5xl xl:text-6xl/none">
-                    Descubre el sabor de la felicidad en cada burbuja
+                    Descubrí el sabor de la felicidad junto a <span className="text-[#ff8000]">Kybo</span>
                   </h1>
-                  <p className="max-w-[600px] text-white/90 md:text-xl">
-                    En Kybo creamos experiencias únicas a través de nuestros Bubble Teas y Bubble Waffles artesanales,
+                  <p className="tracking-wide text-white/90 md:text-xl">
+                    Nos preocupamos por crear experiencias únicas a través de nuestros Bubble Teas y Bubble Waffles artesanales,
                     elaborados con ingredientes de primera calidad en Salta, Argentina.
                   </p>
                 </div>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                  <Button size="lg" className="bg-[#ff8000] hover:bg-[#ff8000]/90 text-white" asChild>
-                    <Link href="#bubble-tea">Ver Menú</Link>
+                  <Button size="lg" className="bg-[#ff8000] hover:bg-[#ff8000]/90 text-white text-lg" asChild>
+                    <Link target="_blank" href="https://menu.fu.do/kybo">Ver Menú</Link>
+                  </Button>
+                  <Button size="lg" className="text-lg outline-[#ff8000]" variant="outline" asChild>
+                    <Link target="_blank" href="https://menu.fu.do/kybo">Mi tarjeta de puntos</Link>
                   </Button>
                 </div>
               </div>
-              <div className="relative mx-auto aspect-square w-full max-w-md rounded-full bg-[#ff8000] p-4 shadow-xl">
+              <div className="hidden md:block relative mx-auto aspect-square w-full max-w-md rounded-full bg-[#ff8000] p-4 shadow-xl">
                 <div className="absolute inset-0 flex items-center justify-center">
                   <Image
-                    src="/placeholder.svg?height=350&width=350"
+                    src="/images/mona-lisa.webp"
                     width={350}
                     height={350}
                     alt="Bubble Tea Kybo"
@@ -183,7 +130,7 @@ export default function LandingPage() {
             <ProductCarousel
               products={bubbleTeas}
               title="Nuestros Bubble Teas"
-              description="Descubre nuestra variedad de Bubble Teas, preparados con ingredientes frescos y perlas de tapioca."
+              description="Tenemos una amplia variedad de Bubble Teas, preparados con ingredientes frescos y perlas de tapioca."
             />
           </div>
         </section>
@@ -194,13 +141,13 @@ export default function LandingPage() {
             <ProductCarousel
               products={bubbleWaffles}
               title="Nuestros Bubble Waffles"
-              description="Prueba nuestros deliciosos Bubble Waffles, con su textura única y combinaciones irresistibles."
+              description="Te retamos a probar nuestros Bubble Waffles, con su textura única y combinaciones irresistibles."
             />
           </div>
         </section>
 
         {/* Ubicación y Horarios Section */}
-        <section id="ubicacion" className="w-full py-12 md:py-24">
+        <section id="nosotros" className="w-full py-12 md:py-24">
           <div className="px-4 md:px-6">
             <div className="grid gap-10 lg:grid-cols-2">
               {/* Ubicación */}
@@ -209,10 +156,10 @@ export default function LandingPage() {
                   <MapPin className="mr-1 h-4 w-4" />
                   Ubicación
                 </div>
-                <h2 className="text-3xl font-bold text-[#013e5e]">Encuéntranos</h2>
+                <h2 className="text-3xl font-bold text-[#013e5e]">¿Dónde nos encontrás?</h2>
                 <p className="text-gray-500">
                   Estamos ubicados en el corazón de Salta, en un espacio acogedor donde podrás disfrutar de nuestros
-                  productos.
+                  productos y al mismo tiempo relajarte y vivir una experiencia única.
                 </p>
                 <div className="font-medium">Rivadavia 349A, Salta, Argentina</div>
                 <div className="aspect-video overflow-hidden rounded-xl border shadow-sm">
@@ -241,20 +188,17 @@ export default function LandingPage() {
                 </p>
                 <div className="space-y-2">
                   <div className="flex justify-between border-b border-gray-100 pb-2">
-                    <span className="font-medium">Martes a Sábado</span>
+                    <span className="font-medium">Lunes a Sábado</span>
                     <span>08:00 AM - 12:00 AM</span>
+                    <span>17:00 PM - 21:00 PM</span>
                   </div>
                   <div className="flex justify-between border-b border-gray-100 pb-2">
                     <span className="font-medium">Domingo</span>
-                    <span>09:00 AM - 12:00 AM</span>
-                  </div>
-                  <div className="flex justify-between border-b border-gray-100 pb-2">
-                    <span className="font-medium">Lunes</span>
-                    <span>Cerrado</span>
+                    <span>Cerrado pa</span>
                   </div>
                 </div>
                 <div className="mt-6 space-y-4">
-                  <h3 className="text-xl font-bold text-[#013e5e]">Síguenos en Redes Sociales</h3>
+                  <h3 className="text-xl font-bold text-[#013e5e]">Seguinos en nuestras redes sociales, subimos contenido que te va a encantar</h3>
                   <div className="flex space-x-4">
                     <Link
                       href="https://www.instagram.com/kybo.arg/"
@@ -276,12 +220,6 @@ export default function LandingPage() {
                     </Link>
                   </div>
                 </div>
-                <div className="mt-8 rounded-xl bg-gradient-to-br from-[#013e5e] to-[#013e5e]/80 p-6 text-white">
-                  <h3 className="text-xl font-bold">¿Tienes alguna pregunta?</h3>
-                  <p className="mt-2">
-                    Contáctanos por redes sociales o visítanos en nuestra tienda. ¡Estaremos encantados de atenderte!
-                  </p>
-                </div>
               </div>
             </div>
           </div>
@@ -297,10 +235,10 @@ export default function LandingPage() {
           </div>
           <div className="relative px-4 md:px-6 text-center">
             <h2 className="text-3xl font-bold text-white md:text-4xl/tight">
-              ¡Vive la experiencia Kybo!
+              ¡Viví una experiencia única, diferente.. la experiencia Kybo!
             </h2>
             <p className="mx-auto mt-4 max-w-[700px] text-white/90 md:text-xl">
-              Sabores únicos, ambiente acogedor y momentos inolvidables te esperan en Kybo.
+              Sabores únicos, ambiente acogedor y momentos inolvidables te esperan en este lugar mágico. No te lo podés perder.
             </p>
           </div>
         </section>
@@ -311,23 +249,9 @@ export default function LandingPage() {
         <div className="px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="flex items-center gap-2">
-              <Image src="/images/logo.webp" alt="Kybo Logo" width={80} height={32} className="h-auto" />
+              <Image src="/images/logo1.webp" alt="Kybo Logo" width={100} height={32} className="h-auto" />
             </div>
-            <p className="text-sm text-gray-500">Kybo © {new Date().getFullYear()} - Todos los derechos reservados</p>
-            <div className="flex gap-4">
-              <Link href="#bubble-tea" className="text-xs text-[#013e5e] hover:text-[#ff8000]">
-                Bubble Tea
-              </Link>
-              <Link href="#bubble-waffle" className="text-xs text-[#013e5e] hover:text-[#ff8000]">
-                Bubble Waffle
-              </Link>
-              <Link href="#ubicacion" className="text-xs text-[#013e5e] hover:text-[#ff8000]">
-                Ubicación
-              </Link>
-              <Link href="#horarios" className="text-xs text-[#013e5e] hover:text-[#ff8000]">
-                Horarios
-              </Link>
-            </div>
+            <p className="text-md text-gray-500">Kybo © {new Date().getFullYear()} - Todos los derechos reservados</p>
             <div className="flex gap-4">
               <Link
                 href="https://www.instagram.com/kybo.arg/"
@@ -335,7 +259,7 @@ export default function LandingPage() {
                 rel="noopener noreferrer"
                 className="text-[#013e5e] hover:text-[#ff8000]"
               >
-                <Instagram className="h-5 w-5" />
+                <Instagram className="h-7 s-7" />
                 <span className="sr-only">Instagram</span>
               </Link>
               <Link
@@ -344,7 +268,7 @@ export default function LandingPage() {
                 rel="noopener noreferrer"
                 className="text-[#013e5e] hover:text-[#ff8000]"
               >
-                <TikTokIcon className="h-5 w-5" />
+                <TikTokIcon className="h-7 s-7" />
                 <span className="sr-only">TikTok</span>
               </Link>
             </div>

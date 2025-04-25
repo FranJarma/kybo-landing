@@ -10,7 +10,6 @@ interface Product {
   name: string
   description: string
   image: string
-  price: string
 }
 
 interface ProductCarouselProps {
@@ -81,23 +80,26 @@ export function ProductCarousel({ products, title, description }: ProductCarouse
         >
           <div className="flex gap-4 px-4">
             {products.map((product, index) => (
-              <div key={index} className="min-w-[280px] snap-start">
+              <div
+                key={index}
+                className="flex-shrink-0 h-[420px] snap-start max-w-[400px]"
+              >
                 <Card className="overflow-hidden transition-all hover:shadow-lg h-full">
-                  <div className="aspect-square overflow-hidden bg-[#f8f9fa]">
+                  {/* Imagen en contenedor fijo */}
+                  <div className="w-full h-[280px] overflow-hidden bg-[#f8f9fa]">
                     <Image
                       src={product.image || "/placeholder.svg"}
                       alt={product.name}
                       width={300}
                       height={300}
-                      className="h-full w-full object-cover transition-transform hover:scale-105"
+                      className="w-full h-full object-fill transition-transform hover:scale-105"
                     />
                   </div>
-                  <CardContent className="p-4">
-                    <div className="flex justify-between items-center">
+                  <CardContent className="p-4 flex flex-col justify-between h-[calc(100%-280px)]">
+                    <div className="text-balance">
                       <h3 className="font-bold text-[#013e5e]">{product.name}</h3>
-                      <span className="font-bold text-[#ff8000]">{product.price}</span>
+                      <p className="mt-2 text-sm text-gray-500 line-clamp-2">{product.description}</p>
                     </div>
-                    <p className="mt-2 text-sm text-gray-500">{product.description}</p>
                   </CardContent>
                 </Card>
               </div>
