@@ -1,0 +1,33 @@
+import { ProductCarousel } from "../product-carousel";
+
+const bubbleTeas = [
+    {
+      name: "No sé que es, pero sabe rico",
+      description: "Té verde matcha con leche, dulce y refrescante. ",
+      image: "/images/matcha.webp"
+    },
+    {
+      name: "Se nos fué la cabeza",
+      description: "Taro cremoso, con notas de vainilla y batata dulce",
+      image: "/images/taro.webp"
+    },
+    {
+      name: "Kybo, the original",
+      description: "Té negro infusionado con leche y endulzado al punto perfecto",
+      image: "/images/original-kybo.webp"
+    },
+];
+
+export function BubbleTeas() {
+    return (
+        <section id="bubble-teas" className="w-full py-12 md:py-24">
+            <div className="px-4 md:px-6">
+            <ProductCarousel
+                products={bubbleTeas}
+                title="Nuestros Bubble Teas"
+                description="Tenemos una amplia variedad de Bubble Teas, preparados con ingredientes frescos y perlas de tapioca."
+            />
+            </div>
+        </section>
+    )
+}

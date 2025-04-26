@@ -5,6 +5,10 @@
   --kybo-orange: #ff8000;
 }
 
+html { 
+  scroll-behavior: smooth;
+}
+
 @layer base {
   body {
     @apply bg-[#f8f9fa];
