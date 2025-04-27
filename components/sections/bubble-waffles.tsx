@@ -1,4 +1,4 @@
-import { ProductCarousel } from "../product-carousel";
+import { ProductCarousel } from "../ui/product-carousel";
 
 const bubbleWaffles = [
     {

@@ -5,6 +5,7 @@ import { BubbleTeas } from "@/components/sections/bubble-teas"
 import { BubbleWaffles } from "@/components/sections/bubble-waffles"
 import { AboutUs } from "@/components/sections/about-us"
 import { KyboExperience } from "@/components/sections/kybo-experience"
+import { SocialMedia } from "@/components/sections/social-media"
 
 export default function LandingPage() {
   return (
@@ -15,6 +16,7 @@ export default function LandingPage() {
         <BubbleTeas/>
         <BubbleWaffles/>
         <AboutUs/>
+        <SocialMedia/>
         <KyboExperience/>
       </main>
       <Footer/>
