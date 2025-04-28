@@ -7,11 +7,9 @@ export function KyboExperience() {
                 <div className="absolute bottom-10 left-1/4 h-24 w-24 rounded-full bg-[#013e5e]/20"></div>
             </div>
             <div className="relative px-4 md:px-6 text-center">
-                <h2 className="text-3xl font-bold text-white md:text-4xl/tight">
-                    ¿Estás listo para vivir la experiencia Kybo?
-                </h2>
+                <h2 className="text-3xl font-bold text-white md:text-4xl/tight">¿Venis o ke?</h2>
                 <p className="mx-auto mt-4 max-w-[700px] text-white/90 md:text-xl">
-                    Sabores únicos, ambiente acogedor y momentos inolvidables te esperan en este lugar mágico. No te lo podés perder.
+                    Te aseguro que vas a salir diciendo: no se que miércoles acabo de probar... pero quiero repetir
                 </p>
             </div>
         </section>
