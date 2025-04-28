@@ -25,7 +25,7 @@ export function SocialMedia() {
   return (
     <>
       <section id="social-media" className="w-full px-4 md:px-6 py-8">
-        <h3 className="text-xl font-bold text-[#013e5e] mb-6">
+        <h3 className="text-xl font-bold text-kybo-blue mb-6">
           Si esperas ver cosas normales… NO ES POR ACÁ.
           Seguinos pué, no por nosotros, sino por vos.
         </h3>

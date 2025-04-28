@@ -19,7 +19,7 @@ export function Footer() {
                     href="https://www.instagram.com/kybo.arg/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#013e5e] hover:text-[#ff8000]"
+                    className="text-kybo-blue hover:text-kybo-orange"
                 >
                     <Instagram className="h-7 s-7" />
                     <span className="sr-only">Instagram</span>
@@ -28,7 +28,7 @@ export function Footer() {
                     href="https://www.tiktok.com/@kybo.arg"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#013e5e] hover:text-[#ff8000]"
+                    className="text-kybo-blue hover:text-kybo-orange"
                 >
                     <TikTokIcon className="h-7 s-7" />
                     <span className="sr-only">TikTok</span>

@@ -4,14 +4,14 @@ export function AboutUs() {
         <div className="px-4 md:px-6">
           <div className="grid gap-10 lg:grid-cols-2">
             <div className="space-y-4">
-              <h2 className="text-3xl font-bold text-[#013e5e]">¿Y... Dónde estamos?</h2>
+              <h2 className="text-3xl font-bold text-kybo-blue">¿Y... Dónde estamos?</h2>
               <p className="text-gray-500 tracking-wide">
                 Cerca de la cancha de GyT, en Rivadavia 394
               </p>
             </div>
 
             <div id="horarios" className="space-y-4">
-              <h2 className="text-3xl font-bold text-[#ff8000]">Todo muy lindo pero... ¿cuando abrimos?</h2>
+              <h2 className="text-3xl font-bold text-kybo-orange">Todo muy lindo pero... ¿cuando abrimos?</h2>
               <p className="text-gray-500 tracking-wide">
                 Ojito con los días y horarios que abrimos para que no te quedes con las ganas de disfrutar de nuestros sabores.
               </p>

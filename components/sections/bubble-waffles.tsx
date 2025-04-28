@@ -30,7 +30,7 @@ const bubbleWaffles = [
 
 export function BubbleWaffles() {
     return (
-        <section id="bubble-waffles" className="w-full py-18 md:py-24 bg-[#013e5e]/5">
+        <section id="bubble-waffles" className="w-full py-18 md:py-24 bg-kybo-blue/5">
             <div className="px-4 md:px-6">
             <ProductCarousel
                 products={bubbleWaffles}
