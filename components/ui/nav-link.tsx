@@ -17,7 +17,7 @@ export function NavLink({ href, label, onClick }: NavLinkProps) {
     return (
       <Link
         href={href}
-        className="text-4xl md:text-lg font-medium text-white hover:text-[#ff8000] transition-colors duration-300 scroll-smooth"
+        className="text-4xl md:text-lg font-medium text-white hover:text-kybo-orange transition-colors duration-300 scroll-smooth"
         onClick={onClick}
       >
         {label}

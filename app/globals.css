@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
-:root {
-  --kybo-blue: #013e5e;
-  --kybo-orange: #ff8000;
+@theme {
+  --color-kybo-blue: #013e5e;
+  --color-kybo-orange: #ff8000;
 }
 
 html { 
