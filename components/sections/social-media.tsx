@@ -26,7 +26,8 @@ export function SocialMedia() {
     <>
       <section id="social-media" className="w-full px-4 md:px-6 py-8">
         <h3 className="text-xl font-bold text-[#013e5e] mb-6">
-          ¿Todavía no nos seguís en nuestras hermosas redes sociales? No te duermas eh! Te dejamos unos adelantos...
+          Si esperas ver cosas normales… NO ES POR ACÁ.
+          Seguinos pué, no por nosotros, sino por vos.
         </h3>
         <div className="flex flex-col md:flex-row w-full gap-6 overflow-hidden">
           {/* TikTok Embed */}

@@ -1,15 +1,13 @@
 export function AboutUs() {
     return (
-        <section id="nosotros" className="w-full pt-12 md:pt-24">
+        <section id="nosotros" className="w-full pt-18 md:pt-24">
         <div className="px-4 md:px-6">
           <div className="grid gap-10 lg:grid-cols-2">
             <div className="space-y-4">
               <h2 className="text-3xl font-bold text-[#013e5e]">¿Y... Dónde estamos?</h2>
               <p className="text-gray-500 tracking-wide">
-                Estamos ubicados en el corazón de Salta, en un espacio clave para que puedas disfrutar de nuestros
-                productos y al mismo tiempo relajarte y vivir una experiencia única.
+                Cerca de la cancha de GyT, en Rivadavia 394
               </p>
-              <div className="font-medium">Rivadavia 349A, Salta, Argentina</div>
             </div>
 
             <div id="horarios" className="space-y-4">

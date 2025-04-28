@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { TikTokIcon } from "../tiktok-icon";
 
+const year = new Date().getFullYear();
+
 export function Footer() {
     return (
         <footer className="w-full border-t py-6 md:py-12">
@@ -11,7 +13,7 @@ export function Footer() {
                 <div className="flex items-center gap-2">
                 <Image src="/images/logo1.webp" alt="Kybo Logo" width={100} height={32} className="h-auto" />
                 </div>
-                <p className="text-md text-gray-500">Kybo © {new Date().getFullYear()} - Todos los derechos reservados</p>
+                <p className="text-md text-gray-500">Kybo © {year} - Todos los derechos reservados</p>
                 <div className="flex gap-4">
                 <Link
                     href="https://www.instagram.com/kybo.arg/"

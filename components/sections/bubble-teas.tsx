@@ -20,12 +20,12 @@ const bubbleTeas = [
 
 export function BubbleTeas() {
     return (
-        <section id="bubble-teas" className="w-full py-12 md:py-24">
+        <section id="bubble-teas" className="w-full py-18 md:py-24">
             <div className="px-4 md:px-6">
             <ProductCarousel
                 products={bubbleTeas}
                 title="Nuestros Bubble Teas"
-                description="Tenemos una amplia variedad de Bubble Teas, preparados con ingredientes frescos y perlas de tapioca."
+                description="Esto viene de TAIWAN, podés creer? Nosotros tampoco sabíamos... pero qué importa. El tema es que ahora lo tenés acá, y sí, es una f#cking locura. "
             />
             </div>
         </section>

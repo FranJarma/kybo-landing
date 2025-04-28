@@ -1,20 +1,48 @@
+"use client"
+
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { navItems, NavLink } from "../ui/nav-link";
+import { MenuIcon } from "lucide-react";
 
 export function Header() {
-    return (
-        <header className="sticky top-0 z-50 w-full bg-[#013e5e] transition-all">
-            <div className="flex h-16 items-center justify-between">
-            <Link href="#" className="flex items-center gap-2 ml-4">
-                <Image src="/images/logo2.webp" alt="Kybo Logo" width={100} height={50} className="h-auto" />
-            </Link>
-            <nav className="flex gap-6 mr-4">
-                {navItems.map((item) => (
-                    <NavLink key={item.href} href={item.href} label={item.label} />
-                ))}
-            </nav>
-            </div>
-      </header>
-    )
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  return (
+    <header className="sticky top-0 z-50 w-full bg-[#013e5e] transition-all">
+      <div className="flex h-16 items-center justify-between relative z-50">
+        <Link href="#" className="flex items-center gap-2">
+          <Image src="/images/logo2.webp" alt="Kybo Logo" width={100} height={50} className="h-auto" />
+        </Link>
+
+        <nav className="hidden md:flex gap-6 mr-6">
+          {navItems.map((item) => (
+            <NavLink key={item.href} href={item.href} label={item.label} />
+          ))}
+        </nav>
+
+        <button
+          className="md:hidden mr-4 flex items-center"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Toggle menu"
+        >
+          <MenuIcon color="white"/>
+        </button>
+      </div>
+
+      {isMobileMenuOpen && (
+        <div className="fixed inset-0 bg-[#013e5e]/90 backdrop-blur-sm flex flex-col items-center justify-center gap-8 z-40">
+          {navItems.map((item) => (
+            <NavLink
+              key={item.href}
+              href={item.href}
+              label={item.label}
+              onClick={() => setIsMobileMenuOpen(false)}
+            />
+          ))}
+        </div>
+      )}
+    </header>
+  );
 }
