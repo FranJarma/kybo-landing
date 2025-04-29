@@ -9,7 +9,7 @@ export function KyboExperience() {
             <div className="relative px-4 md:px-6 text-center">
                 <h2 className="text-3xl font-bold text-white md:text-4xl/tight">¿Venis o ke?</h2>
                 <p className="mx-auto mt-4 max-w-[700px] text-white/90 md:text-xl">
-                    Te aseguro que vas a salir diciendo: no se que miércoles acabo de probar... pero quiero repetir
+                    Te aseguro que vas a salir diciendo: no se que caraj# acabo de probar... pero quiero repetir
                 </p>
             </div>
         </section>

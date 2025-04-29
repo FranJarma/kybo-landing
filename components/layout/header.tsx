@@ -4,10 +4,16 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { navItems, NavLink } from "../ui/nav-link";
-import { MenuIcon } from "lucide-react";
+import { BiMenu, BiX } from "react-icons/bi";
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  
+  const MenuIcon = () =>{
+    return (
+      isMobileMenuOpen ? <BiX className="h-6 w-6 text-white cursor-pointer" /> : <BiMenu className="h-6 w-6 text-white cursor-pointer" />
+    )
+  }
 
   return (
     <header className="sticky top-0 z-50 w-full bg-kybo-blue transition-all">
@@ -27,7 +33,7 @@ export function Header() {
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle menu"
         >
-          <MenuIcon color="white"/>
+          <MenuIcon/>
         </button>
       </div>
 

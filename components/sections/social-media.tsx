@@ -4,13 +4,11 @@ import { useEffect } from "react";
 
 export function SocialMedia() {
   useEffect(() => {
-    // Cargar TikTok
     const tiktokScript = document.createElement("script");
     tiktokScript.src = "https://www.tiktok.com/embed.js";
     tiktokScript.async = true;
     document.body.appendChild(tiktokScript);
 
-    // Cargar Instagram
     const instagramScript = document.createElement("script");
     instagramScript.src = "https://www.instagram.com/embed.js";
     instagramScript.async = true;
@@ -30,7 +28,6 @@ export function SocialMedia() {
           Seguinos pué, no por nosotros, sino por vos.
         </h3>
         <div className="flex flex-col md:flex-row w-full gap-6 overflow-hidden">
-          {/* TikTok Embed */}
           <div className="w-full">
             <blockquote
               className="tiktok-embed"
@@ -51,7 +48,6 @@ export function SocialMedia() {
             </blockquote>
           </div>
 
-          {/* Instagram Embed */}
           <div className="w-full md:w-[20%] mt-4">
             <blockquote
               className="instagram-media"

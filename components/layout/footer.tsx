@@ -1,7 +1,6 @@
-import { Instagram } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { TikTokIcon } from "../tiktok-icon";
+import { BiLogoInstagram, BiLogoTiktok } from "react-icons/bi";
 
 const year = new Date().getFullYear();
 
@@ -21,7 +20,7 @@ export function Footer() {
                     rel="noopener noreferrer"
                     className="text-kybo-blue hover:text-kybo-orange"
                 >
-                    <Instagram className="h-7 s-7" />
+                    <BiLogoInstagram className="h-6 w-6" />
                     <span className="sr-only">Instagram</span>
                 </Link>
                 <Link
@@ -30,7 +29,7 @@ export function Footer() {
                     rel="noopener noreferrer"
                     className="text-kybo-blue hover:text-kybo-orange"
                 >
-                    <TikTokIcon className="h-7 s-7" />
+                    <BiLogoTiktok className="h-6 w-6" />
                     <span className="sr-only">TikTok</span>
                 </Link>
                 </div>

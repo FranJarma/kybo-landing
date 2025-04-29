@@ -8,7 +8,7 @@ const bubbleTeas = [
     },
     {
       name: "Se nos fué la cabeza",
-      description: "Taro cremoso, con notas de vainilla y batata dulce",
+      description: "Taro cremoso, con notas de vainilla y batata dulce (el caliente? GOD)",
       image: "/images/taro.webp"
     },
     {
