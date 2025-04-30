@@ -22,12 +22,11 @@ export function SocialMedia() {
 
   return (
     <>
-      <section id="social-media" className="w-full px-4 md:px-6 py-8">
-        <h3 className="text-xl font-bold text-kybo-blue mb-6">
-          Si esperas ver cosas normales… NO ES POR ACÁ.
-          Seguinos pué, no por nosotros, sino por vos.
+      <section id="social-media" className="w-full px-4 py-8 md:px-6">
+        <h3 className="text-kybo-blue mb-6 text-xl font-bold">
+          Si esperas ver cosas normales… NO ES POR ACÁ. Seguinos pué, no por nosotros, sino por vos.
         </h3>
-        <div className="flex flex-col md:flex-row w-full gap-6 overflow-hidden">
+        <div className="flex w-full flex-col gap-6 overflow-hidden md:flex-row">
           <div className="w-full">
             <blockquote
               className="tiktok-embed"
@@ -48,7 +47,7 @@ export function SocialMedia() {
             </blockquote>
           </div>
 
-          <div className="w-full md:w-[20%] mt-4">
+          <div className="mt-4 w-full md:w-[20%]">
             <blockquote
               className="instagram-media"
               data-instgrm-permalink="https://www.instagram.com/kybo.arg"
@@ -92,7 +91,14 @@ export function SocialMedia() {
                         width: "40px",
                       }}
                     ></div>
-                    <div style={{ display: "flex", flexDirection: "column", flexGrow: "1", justifyContent: "center" }}>
+                    <div
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        flexGrow: "1",
+                        justifyContent: "center",
+                      }}
+                    >
                       <div
                         style={{
                           backgroundColor: "#F4F4F4",
@@ -115,8 +121,22 @@ export function SocialMedia() {
                     </div>
                   </div>
                   <div style={{ padding: "19% 0" }}></div>
-                  <div style={{ display: "block", height: "50px", margin: "0 auto 12px", width: "50px" }}>
-                    <svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlnsXlink="https://www.w3.org/1999/xlink">
+                  <div
+                    style={{
+                      display: "block",
+                      height: "50px",
+                      margin: "0 auto 12px",
+                      width: "50px",
+                    }}
+                  >
+                    <svg
+                      width="50px"
+                      height="50px"
+                      viewBox="0 0 60 60"
+                      version="1.1"
+                      xmlns="https://www.w3.org/2000/svg"
+                      xmlnsXlink="https://www.w3.org/1999/xlink"
+                    >
                       <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                         <g transform="translate(-511.000000, -20.000000)" fill="#000000">
                           <g>
@@ -127,14 +147,38 @@ export function SocialMedia() {
                     </svg>
                   </div>
                   <div style={{ paddingTop: "8px" }}>
-                    <div style={{ color: "#3897f0", fontFamily: "Arial,sans-serif", fontSize: "14px", fontStyle: "normal", fontWeight: "550", lineHeight: "18px" }}>
+                    <div
+                      style={{
+                        color: "#3897f0",
+                        fontFamily: "Arial,sans-serif",
+                        fontSize: "14px",
+                        fontStyle: "normal",
+                        fontWeight: "550",
+                        lineHeight: "18px",
+                      }}
+                    >
                       View this post on Instagram
                     </div>
                   </div>
                   <div style={{ padding: "12.5% 0" }}></div>
-                  <div style={{ display: "flex", flexDirection: "row", marginBottom: "14px", alignItems: "center" }}>
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                      marginBottom: "14px",
+                      alignItems: "center",
+                    }}
+                  >
                     <div>
-                      <div style={{ backgroundColor: "#F4F4F4", borderRadius: "50%", height: "12.5px", width: "12.5px", transform: "translateX(0px) translateY(7px)" }}></div>
+                      <div
+                        style={{
+                          backgroundColor: "#F4F4F4",
+                          borderRadius: "50%",
+                          height: "12.5px",
+                          width: "12.5px",
+                          transform: "translateX(0px) translateY(7px)",
+                        }}
+                      ></div>
                       <div
                         style={{
                           backgroundColor: "#F4F4F4",
@@ -146,10 +190,26 @@ export function SocialMedia() {
                           marginLeft: "2px",
                         }}
                       ></div>
-                      <div style={{ backgroundColor: "#F4F4F4", borderRadius: "50%", height: "12.5px", width: "12.5px", transform: "translateX(9px) translateY(-18px)" }}></div>
+                      <div
+                        style={{
+                          backgroundColor: "#F4F4F4",
+                          borderRadius: "50%",
+                          height: "12.5px",
+                          width: "12.5px",
+                          transform: "translateX(9px) translateY(-18px)",
+                        }}
+                      ></div>
                     </div>
                     <div style={{ marginLeft: "8px" }}>
-                      <div style={{ backgroundColor: "#F4F4F4", borderRadius: "50%", flexGrow: "0", height: "20px", width: "20px" }}></div>
+                      <div
+                        style={{
+                          backgroundColor: "#F4F4F4",
+                          borderRadius: "50%",
+                          flexGrow: "0",
+                          height: "20px",
+                          width: "20px",
+                        }}
+                      ></div>
                       <div
                         style={{
                           width: "0",
@@ -162,21 +222,100 @@ export function SocialMedia() {
                       ></div>
                     </div>
                     <div style={{ marginLeft: "auto" }}>
-                      <div style={{ width: "0px", borderTop: "8px solid #F4F4F4", borderRight: "8px solid transparent", transform: "translateY(16px)" }}></div>
-                      <div style={{ backgroundColor: "#F4F4F4", flexGrow: "0", height: "12px", width: "16px", transform: "translateY(-4px)" }}></div>
-                      <div style={{ width: "0", height: "0", borderTop: "8px solid #F4F4F4", borderLeft: "8px solid transparent", transform: "translateY(-4px) translateX(8px)" }}></div>
+                      <div
+                        style={{
+                          width: "0px",
+                          borderTop: "8px solid #F4F4F4",
+                          borderRight: "8px solid transparent",
+                          transform: "translateY(16px)",
+                        }}
+                      ></div>
+                      <div
+                        style={{
+                          backgroundColor: "#F4F4F4",
+                          flexGrow: "0",
+                          height: "12px",
+                          width: "16px",
+                          transform: "translateY(-4px)",
+                        }}
+                      ></div>
+                      <div
+                        style={{
+                          width: "0",
+                          height: "0",
+                          borderTop: "8px solid #F4F4F4",
+                          borderLeft: "8px solid transparent",
+                          transform: "translateY(-4px) translateX(8px)",
+                        }}
+                      ></div>
                     </div>
                   </div>
-                  <div style={{ display: "flex", flexDirection: "column", flexGrow: "1", justifyContent: "center", marginBottom: "24px" }}>
-                    <div style={{ backgroundColor: "#F4F4F4", borderRadius: "4px", flexGrow: "0", height: "14px", marginBottom: "6px", width: "224px" }}></div>
-                    <div style={{ backgroundColor: "#F4F4F4", borderRadius: "4px", flexGrow: "0", height: "14px", width: "144px" }}></div>
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      flexGrow: "1",
+                      justifyContent: "center",
+                      marginBottom: "24px",
+                    }}
+                  >
+                    <div
+                      style={{
+                        backgroundColor: "#F4F4F4",
+                        borderRadius: "4px",
+                        flexGrow: "0",
+                        height: "14px",
+                        marginBottom: "6px",
+                        width: "224px",
+                      }}
+                    ></div>
+                    <div
+                      style={{
+                        backgroundColor: "#F4F4F4",
+                        borderRadius: "4px",
+                        flexGrow: "0",
+                        height: "14px",
+                        width: "144px",
+                      }}
+                    ></div>
                   </div>
                 </a>
-                <p style={{ color: "#c9c8cd", fontFamily: "Arial,sans-serif", fontSize: "14px", lineHeight: "17px", marginBottom: "0", marginTop: "8px", overflow: "hidden", padding: "8px 0 7px", textAlign: "center", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
-                  <a href="https://www.instagram.com/kybo.arg" style={{ color: "#c9c8cd", fontFamily: "Arial,sans-serif", fontSize: "14px", fontStyle: "normal", fontWeight: "normal", lineHeight: "17px", textDecoration: "none" }} target="_blank">
+                <p
+                  style={{
+                    color: "#c9c8cd",
+                    fontFamily: "Arial,sans-serif",
+                    fontSize: "14px",
+                    lineHeight: "17px",
+                    marginBottom: "0",
+                    marginTop: "8px",
+                    overflow: "hidden",
+                    padding: "8px 0 7px",
+                    textAlign: "center",
+                    textOverflow: "ellipsis",
+                    whiteSpace: "nowrap",
+                  }}
+                >
+                  <a
+                    href="https://www.instagram.com/kybo.arg"
+                    style={{
+                      color: "#c9c8cd",
+                      fontFamily: "Arial,sans-serif",
+                      fontSize: "14px",
+                      fontStyle: "normal",
+                      fontWeight: "normal",
+                      lineHeight: "17px",
+                      textDecoration: "none",
+                    }}
+                    target="_blank"
+                  >
                     Shared post
                   </a>{" "}
-                  on <time style={{ fontFamily: "Arial,sans-serif", fontSize: "14px", lineHeight: "17px" }}>Time</time>
+                  on{" "}
+                  <time
+                    style={{ fontFamily: "Arial,sans-serif", fontSize: "14px", lineHeight: "17px" }}
+                  >
+                    Time
+                  </time>
                 </p>
               </div>
             </blockquote>
