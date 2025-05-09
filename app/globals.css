@@ -15,7 +15,6 @@ html {
   }
 }
 
-/* Animaciones para las burbujas */
 @keyframes float {
   0% {
     transform: translate(0, 0) scale(1);
@@ -55,7 +54,6 @@ html {
   animation-duration: 12s;
 }
 
-/* Ocultar scrollbar pero mantener funcionalidad */
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
@@ -85,7 +83,8 @@ html {
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
 .hide-scrollbar {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import Script from "next/script";
 
 const myFont = localFont({ src: "./../public/fonts/hwt_artz.otf" });
 
@@ -17,6 +18,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
+      <Script
+        async
+        src="https://static.sppopups.com/assets/loader.js"
+        data-chats-widget-id={process.env.SENDPULSE_NEWSLETTER_FORM_ID}
+      ></Script>
       <body className={`${myFont.className} antialiased`}>{children}</body>
     </html>
   );
