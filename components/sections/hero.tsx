@@ -1,11 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
+
 import { Button } from "../ui/button";
 
 export function Hero() {
   return (
-    <section id="hero" className="bg-kybo-blue relative h-screen overflow-hidden">
-      <div className="absolute inset-0">
+    <section
+      id="hero"
+      aria-label="Kybo presentación"
+      className="bg-kybo-blue relative h-screen overflow-hidden"
+    >
+      <div aria-hidden="true" className="absolute inset-0">
         <div className="bg-kybo-orange/20 absolute top-10 left-10 h-20 w-20 rounded-full" />
         <div className="bg-kybo-orange/30 absolute top-40 right-20 h-32 w-32 rounded-full" />
         <div className="bg-kybo-orange/20 absolute bottom-10 left-1/4 h-24 w-24 rounded-full" />
@@ -20,39 +25,47 @@ export function Hero() {
             Si te gustan las cosas random, es por acá, nada más ni nada menos que en{" "}
             <span className="text-kybo-orange">Kybo</span>
           </h1>
+
           <p className="text-white/90 md:text-xl">
             Si nunca probaste un Bubble Tea o un Bubble Waffle, no sé qué bubble estás esperando. Y
             si ya lo hiciste... bueno, sabés que siempre hay lugar para uno más.
           </p>
+
           <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center md:justify-start">
             <Button
               size="lg"
               className="bg-kybo-orange hover:bg-kybo-orange/90 w-full text-center text-lg text-white"
               asChild
             >
-              <Link target="_blank" href="https://menu.fu.do/kybo">
+              <Link href="https://menu.fu.do/kybo" target="_blank" rel="noopener">
                 Ver Menú
               </Link>
             </Button>
+
             <Button
               size="lg"
               variant="outline"
-              className="text-cente text-kybo-orange w-full border-[#ff8000] text-lg"
+              className="text-kybo-orange w-full border-[#ff8000] text-center text-lg"
               asChild
             >
-              <Link target="_blank" href="https://menu.fu.do/kybo">
+              <Link href="https://menu.fu.do/kybo" target="_blank" rel="noopener">
                 Mi tarjeta de puntos
               </Link>
             </Button>
           </div>
         </div>
 
-        <div className="bg-kybo-orange relative mt-10 hidden aspect-square max-w-md items-center justify-center rounded-full p-4 shadow-xl md:flex md:w-full">
+        <div
+          className="bg-kybo-orange relative mt-10 hidden aspect-square max-w-md items-center justify-center rounded-full p-4 shadow-xl md:flex md:w-full"
+          role="presentation"
+        >
           <Image
             src="/images/mona-lisa.webp"
             width={350}
             height={350}
             alt="Bubble Tea Kybo"
+            priority
+            sizes="(min-width: 768px) 350px, 100vw"
             className="rounded-full object-cover"
           />
         </div>
