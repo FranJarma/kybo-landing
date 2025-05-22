@@ -1,11 +1,12 @@
-import { Footer } from "@/components/layout/footer";
-import { Header } from "@/components/layout/header";
-import { AboutUs } from "@/components/sections/about-us";
-import { BubbleTeas } from "@/components/sections/bubble-teas";
-import { BubbleWaffles } from "@/components/sections/bubble-waffles";
-import { Hero } from "@/components/sections/hero";
-import { KyboExperience } from "@/components/sections/kybo-experience";
-import { SocialMedia } from "@/components/sections/social-media";
+import { Footer, Header } from "@/components/layout";
+import {
+  AboutUs,
+  BubbleTeas,
+  BubbleWaffles,
+  Hero,
+  KyboExperience,
+  SocialMedia,
+} from "@/components/sections";
 
 export default function LandingPage() {
   return (

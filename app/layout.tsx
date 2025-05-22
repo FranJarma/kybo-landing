@@ -5,7 +5,7 @@ import localFont from "next/font/local";
 
 const kyboFont = localFont({ src: "./../public/fonts/hwt_artz.otf" });
 
-const baseUrl = process.env.NODE_ENV === "production" ? process.env.PROD_URL : process.env.DEV_URL;
+const baseUrl = process.env.PROD_URL ?? process.env.DEV_URL;
 
 export const metadata: Metadata = {
   title: "Kybo - Algo diferente a lo común",
