@@ -31,25 +31,14 @@ export function Hero() {
             si ya lo hiciste... bueno, sabés que siempre hay lugar para uno más.
           </p>
 
-          <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center md:justify-start">
+          <div className="flex w-full flex-col items-center gap-4 sm:flex-row sm:justify-center md:justify-start">
             <Button
               size="lg"
-              className="bg-kybo-orange hover:bg-kybo-orange/90 w-full text-center text-lg text-white"
+              className="bg-kybo-orange hover:bg-kybo-orange/90 w-full text-center text-lg text-white md:w-96"
               asChild
             >
               <Link href="https://menu.fu.do/kybo" target="_blank" rel="noopener">
                 Ver Menú
-              </Link>
-            </Button>
-
-            <Button
-              size="lg"
-              variant="outline"
-              className="text-kybo-orange w-full border-[#ff8000] text-center text-lg"
-              asChild
-            >
-              <Link href="https://menu.fu.do/kybo" target="_blank" rel="noopener">
-                Mi tarjeta de puntos
               </Link>
             </Button>
           </div>

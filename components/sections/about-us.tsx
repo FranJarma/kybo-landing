@@ -2,7 +2,7 @@ export function AboutUs() {
   return (
     <section id="nosotros" aria-labelledby="about-us-heading" className="w-full pt-18 md:pt-24">
       <div className="px-4 md:px-6">
-        <div className="grid gap-10 lg:grid-cols-2">
+        <div className="grid gap-24 lg:grid-cols-2 lg:gap-72">
           <div className="space-y-4">
             <h2 id="about-us-heading" className="text-kybo-blue text-3xl font-bold">
               ¿Y... Dónde estamos?
@@ -13,11 +13,15 @@ export function AboutUs() {
                 href="https://maps.app.goo.gl/z8hkvExnN4TuhwQD9"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-kybo-orange underline"
+                className="hover:text-kybo-orange text-black underline"
               >
-                Rivadavia 394, Salta
+                Rivadavia 349, Salta
               </a>
             </address>
+            <p className="text-gray-500">
+              Estamos en pleno centro de Salta la Linda, te vas a dar cuenta dónde estamos porque
+              hay una mona lisa tomando bubble tea pintada dentro del local, loquísimo, no?
+            </p>
           </div>
 
           <div id="horarios" className="space-y-4" aria-labelledby="horarios-heading">
@@ -29,18 +33,18 @@ export function AboutUs() {
               disfrutar de nuestros sabores.
             </p>
             <div className="space-y-2">
-              <div className="flex justify-between border-b border-gray-100 pb-2">
-                <span className="font-medium">Lunes a Sábado</span>
-                <span>
+              <div className="grid grid-cols-3 items-center gap-4 border-b border-gray-400 pb-2">
+                <span className="col-span-1 font-medium">Lunes a Sábado</span>
+                <span className="col-span-1">
                   <time dateTime="08:00">08:00</time> - <time dateTime="12:00">12:00</time>
                 </span>
-                <span>
+                <span className="col-span-1">
                   <time dateTime="17:00">17:00</time> - <time dateTime="21:00">21:00</time>
                 </span>
               </div>
-              <div className="flex justify-between border-b border-gray-100 pb-2">
-                <span className="font-medium">Domingo</span>
-                <span>Cerrado pa</span>
+              <div className="grid grid-cols-3 items-center gap-4 border-b border-gray-400 pb-2">
+                <span className="col-span-1 font-medium">Domingo</span>
+                <span className="col-span-2">Cerrado pa</span>
               </div>
             </div>
           </div>

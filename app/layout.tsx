@@ -5,13 +5,13 @@ import localFont from "next/font/local";
 
 const kyboFont = localFont({ src: "./../public/fonts/hwt_artz.otf" });
 
-const baseUrl = process.env.PROD_URL ?? "https://kybo.com.ar";
+const baseUrl = process.env.NODE_ENV === "production" ? process.env.PROD_URL : process.env.DEV_URL;
 
 export const metadata: Metadata = {
   title: "Kybo - Algo diferente a lo común",
   description:
     "En Kybo creamos experiencias únicas a través de nuestros Bubble Teas y Bubble Waffles artesanales, elaborados con ingredientes de primera calidad en Salta, Argentina.",
-  metadataBase: new URL(baseUrl),
+  metadataBase: baseUrl ? new URL(baseUrl) : null,
   openGraph: {
     title: "Kybo - Bubble Teas y Waffles en Salta Capital",
     description:
@@ -49,7 +49,7 @@ export default function RootLayout({
     <html lang="es">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#ff8000" />
+        <meta name="theme-color" content="#013e5e" />
         <link rel="canonical" href={baseUrl} />
       </head>
       <body className={`${kyboFont.className} antialiased`}>
