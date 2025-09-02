@@ -10,23 +10,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date().toISOString(),
     },
     {
-      url: `${baseUrl}/#about-us`,
+      url: `${baseUrl}/#los-pibardos`,
       lastModified: new Date().toISOString(),
     },
     {
-      url: `${baseUrl}/#bubble-teas`,
+      url: `${baseUrl}/#nuestros-productos`,
       lastModified: new Date().toISOString(),
     },
     {
-      url: `${baseUrl}/#bubble-waffles`,
+      url: `${baseUrl}/#experiencia-kybo`,
       lastModified: new Date().toISOString(),
     },
     {
-      url: `${baseUrl}/#kybo-experience`,
-      lastModified: new Date().toISOString(),
-    },
-    {
-      url: `${baseUrl}/#social-media`,
+      url: `${baseUrl}/#nuestras-redes`,
       lastModified: new Date().toISOString(),
     },
   ];

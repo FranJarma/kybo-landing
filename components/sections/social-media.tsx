@@ -22,10 +22,14 @@ export function SocialMedia() {
 
   return (
     <>
-      <section id="social-media" className="w-full px-4 py-8 md:px-6">
-        <h3 className="text-kybo-blue mb-6 text-xl font-bold">
+      <section id="nuestras-redes" className="w-full px-4 py-32 text-center md:px-6 md:py-48">
+        <h2 className="text-kybo-blue text-3xl font-bold md:text-4xl">
+          {" "}
+          Un poco de nuestras redes sociales
+        </h2>
+        <p className="mx-auto max-w-[700px] text-lg text-gray-500 md:text-xl">
           Si esperas ver cosas normales… NO ES POR ACÁ. Seguinos pué, no por nosotros, sino por vos.
-        </h3>
+        </p>
         <div className="flex w-full flex-col gap-6 overflow-hidden md:flex-row">
           <div className="w-full">
             <blockquote

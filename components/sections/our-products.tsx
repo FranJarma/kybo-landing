@@ -82,7 +82,7 @@ const ourProducts: Product[] = [
 
 export function OurProducts() {
   return (
-    <section id="nuestros-productos" className="bg-kybo-blue/5 w-full py-18 md:py-24">
+    <section id="nuestros-productos" className="bg-kybo-blue/5 w-full py-32 md:py-48">
       <div className="px-4 md:px-6">
         <ProductCarousel
           products={ourProducts}

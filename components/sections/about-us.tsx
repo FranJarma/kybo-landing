@@ -1,10 +1,10 @@
 export function AboutUs() {
   return (
-    <section id="nosotros" aria-labelledby="about-us-heading" className="w-full pt-18 md:pt-24">
+    <section id="los-pibardos" aria-labelledby="pibardos-title" className="w-full py-32 md:py-48">
       <div className="px-4 md:px-6">
         <div className="grid gap-24 lg:grid-cols-2 lg:gap-72">
           <div className="space-y-4">
-            <h2 id="about-us-heading" className="text-kybo-blue text-3xl font-bold">
+            <h2 id="pibardos-title" className="text-kybo-blue text-3xl font-bold">
               ¿Y... Dónde estamos?
             </h2>
             <address className="tracking-wide text-gray-500 not-italic">
@@ -24,7 +24,7 @@ export function AboutUs() {
             </p>
           </div>
 
-          <div id="horarios" className="space-y-4" aria-labelledby="horarios-heading">
+          <section id="horarios" className="space-y-4" aria-labelledby="horarios-heading">
             <h2 id="horarios-heading" className="text-kybo-orange text-3xl font-bold">
               Todo muy lindo pero... ¿cuándo abrimos?
             </h2>
@@ -47,22 +47,22 @@ export function AboutUs() {
                 <span className="col-span-2">Cerrado pa</span>
               </div>
             </div>
-          </div>
+          </section>
         </div>
 
         <figure
           id="ubication"
-          className="mt-10 aspect-video max-h-96 w-full overflow-hidden rounded-xl border shadow-sm"
+          className="mt-10 aspect-video h-96 w-full overflow-hidden rounded-xl border shadow-sm"
           aria-label="Ubicación en el mapa"
         >
           <iframe
-            title="Ubicación de Kybo en Salta"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3622.0394612335247!2d-65.41252492374788!3d-24.78911177870721!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x941bc3a35a3a0c3f%3A0x1d9c3c7c6e8b4e4a!2sRivadavia%20349%2C%20A4400%20Salta!5e0!3m2!1ses!2sar!4v1682456789012!5m2!1ses!2sar"
-            style={{ border: 0 }}
             allowFullScreen={false}
+            className="h-full w-full"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            className="h-full w-full"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3622.0394612335247!2d-65.41252492374788!3d-24.78911177870721!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x941bc3a35a3a0c3f%3A0x1d9c3c7c6e8b4e4a!2sRivadavia%20349%2C%20A4400%20Salta!5e0!3m2!1ses!2sar!4v1682456789012!5m2!1ses!2sar"
+            style={{ border: 0 }}
+            title="Ubicación de Kybo en Salta"
           />
           <figcaption className="sr-only">Ubicación del local en Google Maps</figcaption>
         </figure>

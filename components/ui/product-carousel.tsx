@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import { Card, CardContent } from "@/components/ui/card";
-import { CategoryEnum, Product } from "../types";
+import { Product } from "../types";
 
 type ProductCarouselProps = {
   description: string;
@@ -13,6 +13,9 @@ function ProductCard({ product }: { product: Product }) {
   return (
     <Card className="flex h-full flex-col overflow-hidden shadow transition-all hover:shadow-lg">
       <div className="relative aspect-square w-full bg-[#f8f9fa]">
+        <span className="bg-kybo-orange text-md absolute top-2 right-2 z-10 rounded-full px-3 py-1 leading-5 font-semibold tracking-wider text-white">
+          {product.category}
+        </span>
         <Image
           src={product.image || "/placeholder.svg"}
           alt={product.name}
@@ -20,7 +23,7 @@ function ProductCard({ product }: { product: Product }) {
           className="object-cover"
         />
       </div>
-      <CardContent className="flex flex-grow flex-col p-4">
+      <CardContent className="flex flex-grow flex-col gap-4 p-4">
         <h3 className="text-kybo-blue text-lg font-bold">{product.name}</h3>
         <p className="text-md mt-2 text-gray-500">{product.description}</p>
       </CardContent>

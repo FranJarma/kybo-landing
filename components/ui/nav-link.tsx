@@ -2,8 +2,8 @@ import Link from "next/link";
 
 export const navItems = [
   { href: "#nuestros-productos", label: "Nuestros productos" },
-  { href: "#nosotros", label: "Los pibardos" },
-  { href: "#ustedes", label: "La people" },
+  { href: "#los-pibardos", label: "Los pibardos" },
+  { href: "#nuestras-redes", label: "Nuestras redes" },
 ];
 
 type NavLinkProps = {

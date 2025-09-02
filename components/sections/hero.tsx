@@ -49,13 +49,13 @@ export function Hero() {
           role="presentation"
         >
           <Image
-            src="/images/mona-lisa.webp"
-            width={350}
+            alt="Mona Lisa sosteniendo un Bubble Tea de Kybo"
+            className="rounded-full object-cover"
             height={350}
-            alt="Bubble Tea Kybo"
             priority
             sizes="(min-width: 768px) 350px, 100vw"
-            className="rounded-full object-cover"
+            src="/images/mona-lisa.webp"
+            width={350}
           />
         </div>
       </div>
