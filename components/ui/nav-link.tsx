@@ -1,9 +1,8 @@
 import Link from "next/link";
 
 export const navItems = [
-  { href: "#bubble-teas", label: "Bubble Teas" },
-  { href: "#bubble-waffles", label: "Bubble Waffles" },
-  { href: "#nosotros", label: "Los Pibardos" },
+  { href: "#nuestros-productos", label: "Nuestros productos" },
+  { href: "#nosotros", label: "Los pibardos" },
   { href: "#ustedes", label: "La people" },
 ];
 

@@ -1,12 +1,7 @@
 import Image from "next/image";
 
 import { Card, CardContent } from "@/components/ui/card";
-
-type Product = {
-  description: string;
-  image: string;
-  name: string;
-};
+import { CategoryEnum, Product } from "../types";
 
 type ProductCarouselProps = {
   description: string;
@@ -17,7 +12,7 @@ type ProductCarouselProps = {
 function ProductCard({ product }: { product: Product }) {
   return (
     <Card className="flex h-full flex-col overflow-hidden shadow transition-all hover:shadow-lg">
-      <div className="relative aspect-[4/3] w-full bg-[#f8f9fa]">
+      <div className="relative aspect-square w-full bg-[#f8f9fa]">
         <Image
           src={product.image || "/placeholder.svg"}
           alt={product.name}

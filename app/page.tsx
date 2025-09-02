@@ -1,12 +1,5 @@
 import { Footer, Header } from "@/components/layout";
-import {
-  AboutUs,
-  BubbleTeas,
-  BubbleWaffles,
-  Hero,
-  KyboExperience,
-  SocialMedia,
-} from "@/components/sections";
+import { AboutUs, Hero, KyboExperience, OurProducts, SocialMedia } from "@/components/sections";
 
 export default function LandingPage() {
   return (
@@ -14,8 +7,7 @@ export default function LandingPage() {
       <Header />
       <main className="flex-1">
         <Hero />
-        <BubbleTeas />
-        <BubbleWaffles />
+        <OurProducts />
         <AboutUs />
         <SocialMedia />
         <KyboExperience />
