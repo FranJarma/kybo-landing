@@ -10,13 +10,6 @@ const ourProducts: Product[] = [
     category: CategoryEnum.SWEET_WAFFLE,
   },
   {
-    name: "Banana Split",
-    description:
-      "Masa de vainilla o choco, con crema chantilly, dulce de leche y rodajas de banana",
-    image: "/images/bananasplit.webp",
-    category: CategoryEnum.SWEET_WAFFLE,
-  },
-  {
     name: "Frozono",
     description: "Masa de vainilla o choco, con helado y topppings",
     image: "/images/frozono.webp",
@@ -24,59 +17,59 @@ const ourProducts: Product[] = [
   },
   {
     name: "Classic",
-    description: "El famoso y popular: jamón y queso",
+    description: "El famoso y popular: jamón y queso.",
     image: "/images/classic.webp",
     category: CategoryEnum.SALTY_WAFFLE,
   },
   {
     name: "Distinto",
-    description: "Jamón crudo, rúcula y queso",
+    description: "Jamón crudo, rúcula y queso.",
     image: "/images/distinto.webp",
     category: CategoryEnum.SALTY_WAFFLE,
   },
   {
-    name: "+ Fit que Fat",
-    description: "Huevo y palta con un toque de pimienta negra y aceite de oliva",
-    image: "/images/masfitquefat.webp",
-    category: CategoryEnum.SALTY_WAFFLE,
-  },
-  {
     name: "Pinky",
-    description: "Mortadella, crema de pesto y tomate",
+    description: "Mortadella, crema de pesto y queso.",
     image: "/images/pinky.webp",
     category: CategoryEnum.SALTY_WAFFLE,
   },
   {
     name: "Matcha Iced Latte",
-    description: "Té verde matcha con leche, dulce y refrescante. ",
+    description: "Té verde matcha con leche, dulce y refrescante.",
     image: "/images/matchaicedlatte.webp",
+    category: CategoryEnum.BUBBLE_AND_JELLY,
+  },
+    {
+    name: "Coffee Iced Latte",
+    description: "Café de especialidad con leche, especial para tu pre entreno.",
+    image: "/images/coffeeicedlatte.webp",
     category: CategoryEnum.BUBBLE_AND_JELLY,
   },
   {
     name: "Taro Iced Latte",
-    description: "Taro cremoso, con notas de vainilla y batata dulce (el caliente? GOD)",
+    description: "Taro cremoso, con notas de vainilla y batata dulce.",
     image: "/images/taroicedlatte.webp",
     category: CategoryEnum.BUBBLE_AND_JELLY,
   },
   {
     name: "Kybo Tea",
-    description: "Té negro infusionado con leche y endulzado al punto perfecto",
+    description: "Té Chai infusionado con leche y endulzado al punto perfecto.",
     image: "/images/kybotea.webp",
     category: CategoryEnum.BUBBLE_AND_JELLY,
   },
   {
-    name: "Mango Bubble Sunrise",
+    name: "Bubble Sunrise",
     description:
-      "Té de ceylon con jugo de durazno fresco, pulpa de frutilla y perlas explosivas de mango",
+      "Té chai con mucho hielo, pulpa de frutos rojos, jugo de naranja y perlas explosivas de mango.",
     image: "/images/mangobubblesunrise.webp",
-    category: CategoryEnum.SUMMER_WITH_KYBO,
+    category: CategoryEnum.EXPLOSIVE_TEA,
   },
   {
-    name: "Blueberry Bubble Passion",
+    name: "Blueberry Bubble",
     description:
-      "Té de ceylon con jugo de naranja fresco, pulpa de maracuyá y perlas explosivas de arándanos",
-    image: "/images/kybotea.webp",
-    category: CategoryEnum.SUMMER_WITH_KYBO,
+      "Té chai con mucho hielo, pulpa de maracuyá, jugo de naranja y perlas explosivas de arándanos.",
+    image: "/images/blueberrybubble.webp",
+    category: CategoryEnum.EXPLOSIVE_TEA,
   },
 ];
 
