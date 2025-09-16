@@ -1,5 +1,5 @@
 import { Footer, Header } from "@/components/layout";
-import { AboutUs, Hero, KyboExperience, OurProducts, SocialMedia } from "@/components/sections";
+import { AboutUs, Newsletter, Hero, OurProducts, SocialMedia } from "@/components/sections";
 
 export default function LandingPage() {
   return (
@@ -10,7 +10,7 @@ export default function LandingPage() {
         <OurProducts />
         <AboutUs />
         <SocialMedia />
-        <KyboExperience />
+        <Newsletter />
       </main>
       <Footer />
     </div>

@@ -3,10 +3,9 @@ import { ProductCarousel } from "../ui/product-carousel";
 
 const ourProducts: Product[] = [
   {
-    name: "Frutella",
-    description:
-      "Masa de vainilla o choco, servido con Nutella, frutas frescas y bañado con crema chantilly",
-    image: "/images/frutella.webp",
+    name: "Kybo cream",
+    description: "Masa de vainilla o choco, con crema chantilly y toppings",
+    image: "/images/kybocream.webp",
     category: CategoryEnum.SWEET_WAFFLE,
   },
   {
@@ -29,7 +28,7 @@ const ourProducts: Product[] = [
   },
   {
     name: "Pinky",
-    description: "Mortadella, crema de pesto y queso.",
+    description: "Mortadella, crema de pesto, tomate y queso.",
     image: "/images/pinky.webp",
     category: CategoryEnum.SALTY_WAFFLE,
   },
@@ -39,7 +38,7 @@ const ourProducts: Product[] = [
     image: "/images/matchaicedlatte.webp",
     category: CategoryEnum.BUBBLE_AND_JELLY,
   },
-    {
+  {
     name: "Coffee Iced Latte",
     description: "Café de especialidad con leche, especial para tu pre entreno.",
     image: "/images/coffeeicedlatte.webp",

@@ -1,5 +1,5 @@
 export * from "./about-us";
 export * from "./hero";
-export * from "./kybo-experience";
+export * from "./newsletter";
 export * from "./our-products";
 export * from "./social-media";

@@ -1,3 +1,4 @@
+import { Toaster } from "@/components/ui/sonner";
 import "./globals.css";
 
 import type { Metadata } from "next";
@@ -56,6 +57,7 @@ export default function RootLayout({
         <a href="#main-content" className="sr-only focus:not-sr-only">
           Saltar al contenido
         </a>
+        <Toaster richColors position="bottom-center" />
         {children}
       </body>
     </html>

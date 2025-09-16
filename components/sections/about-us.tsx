@@ -26,11 +26,11 @@ export function AboutUs() {
 
           <section id="horarios" className="space-y-4" aria-labelledby="horarios-heading">
             <h2 id="horarios-heading" className="text-kybo-orange text-3xl font-bold">
-              Todo muy lindo pero... ¿cuándo abrimos?
+              Todo muy lindo pero... ¿qué días atendemos?
             </h2>
             <p className="tracking-wide text-gray-500">
               Ojito con los días y horarios que abrimos para que no te quedes con las ganas de
-              disfrutar de nuestros sabores.
+              disfrutar de la experiencia Kybo.
             </p>
             <div className="space-y-2">
               <div className="grid grid-cols-3 items-center gap-4 border-b border-gray-400 pb-2">
@@ -39,7 +39,7 @@ export function AboutUs() {
                   <time dateTime="08:00">08:00</time> - <time dateTime="12:00">12:00</time>
                 </span>
                 <span className="col-span-1">
-                  <time dateTime="17:00">17:00</time> - <time dateTime="21:00">21:00</time>
+                  <time dateTime="16:00">16:00</time> - <time dateTime="20:00">20:00</time>
                 </span>
               </div>
               <div className="grid grid-cols-3 items-center gap-4 border-b border-gray-400 pb-2">
