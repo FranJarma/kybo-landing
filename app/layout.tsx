@@ -3,6 +3,7 @@ import "./globals.css";
 
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { DiscountDialog } from "@/components/discount-dialog";
 
 const kyboFont = localFont({ src: "./../public/fonts/hwt_artz.otf" });
 
@@ -58,6 +59,7 @@ export default function RootLayout({
           Saltar al contenido
         </a>
         <Toaster richColors position="bottom-center" />
+        <DiscountDialog />
         {children}
       </body>
     </html>

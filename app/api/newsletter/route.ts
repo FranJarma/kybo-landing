@@ -1,7 +1,7 @@
 import { getFudoToken } from "@/utils/fudoUtils";
 import { capitalize } from "@/utils/textUtils";
 import { NextRequest, NextResponse } from "next/server";
-import { FudoRequest } from "../types/fudo";
+import { CustomerFudoRequest, FudoCustomerResponse } from "../types/fudo";
 
 const API_KEY = process.env.FUDO_API_KEY!;
 const API_SECRET = process.env.FUDO_API_SECRET!;
@@ -25,7 +25,25 @@ export async function POST(req: NextRequest) {
   try {
     const token = await getFudoToken(API_KEY, API_SECRET);
 
-    const fudoBody: FudoRequest = {
+    const fudoCustomers = await fetch(`${process.env.FUDO_API_URL}/customers`, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+    });
+
+    const jsonResponse: FudoCustomerResponse = await fudoCustomers.json();
+
+    const isAlreadyRegistered = jsonResponse.data.some(
+      customer => customer.attributes.email === email,
+    );
+
+    if (isAlreadyRegistered) {
+      return NextResponse.json({ error: "Este email ya está registrado" }, { status: 400 });
+    }
+
+    const fudoBody: CustomerFudoRequest = {
       data: {
         type: "Customer",
         attributes: {
@@ -51,13 +69,11 @@ export async function POST(req: NextRequest) {
 
     if (!res.ok) {
       const error = await res.json();
-      console.error("Error en la API de Fudo:", error);
       return NextResponse.json({ error }, { status: 500 });
     }
 
     return NextResponse.json({ success: true });
   } catch (err) {
-    console.error("Error general:", err);
     return NextResponse.json({ error: "Error interno" }, { status: 500 });
   }
 }

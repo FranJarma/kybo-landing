@@ -1,5 +1,5 @@
+import { ProductCarousel } from "../product-carousel";
 import { CategoryEnum, Product } from "../types";
-import { ProductCarousel } from "../ui/product-carousel";
 
 const ourProducts: Product[] = [
   {

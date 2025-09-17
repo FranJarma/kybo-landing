@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import { Card, CardContent } from "@/components/ui/card";
-import { Product } from "../types";
+import { Product } from "./types";
 
 type ProductCarouselProps = {
   description: string;
