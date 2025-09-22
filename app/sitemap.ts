@@ -1,4 +1,4 @@
-import { type MetadataRoute } from "next";
+import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const isProd = process.env.NODE_ENV === "production";
@@ -7,22 +7,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: `${baseUrl}/`,
-      lastModified: new Date().toISOString(),
-    },
-    {
-      url: `${baseUrl}/#los-pibardos`,
-      lastModified: new Date().toISOString(),
-    },
-    {
-      url: `${baseUrl}/#nuestros-productos`,
-      lastModified: new Date().toISOString(),
-    },
-    {
-      url: `${baseUrl}/#experiencia-kybo`,
-      lastModified: new Date().toISOString(),
-    },
-    {
-      url: `${baseUrl}/#nuestras-redes`,
       lastModified: new Date().toISOString(),
     },
   ];

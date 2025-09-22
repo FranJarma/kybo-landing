@@ -14,11 +14,14 @@ export const metadata: Metadata = {
   description:
     "En Kybo creamos experiencias únicas a través de nuestros Bubble Teas y Bubble Waffles artesanales, elaborados con ingredientes de primera calidad en Salta, Argentina.",
   metadataBase: baseUrl ? new URL(baseUrl) : null,
+  alternates: {
+    canonical: baseUrl ?? undefined,
+  },
   openGraph: {
     title: "Kybo - Bubble Teas y Waffles en Salta Capital",
     description:
       "Viví la experiencia Kybo. Nuestros Bubble Teas y Waffles te transportan a otro mundo.",
-    url: baseUrl,
+    url: baseUrl ?? undefined,
     siteName: "Kybo",
     images: [
       {
@@ -38,7 +41,15 @@ export const metadata: Metadata = {
     images: [`${baseUrl}/images/og-image.jpg`],
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: [{ url: "/favicon.ico", sizes: "32x32", type: "image/x-icon" }],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
+    shortcut: ["/favicon.ico"],
+  },
+  manifest: "/site.webmanifest",
+  other: {
+    author: "Kybo",
+    keywords:
+      "Kybo, Bubble Tea, Bubble Waffles, Salta, bebidas artesanales, waffles dulces, waffles salados",
   },
 };
 
@@ -52,7 +63,6 @@ export default function RootLayout({
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#013e5e" />
-        <link rel="canonical" href={baseUrl} />
       </head>
       <body className={`${kyboFont.className} antialiased`}>
         <a href="#main-content" className="sr-only focus:not-sr-only">
