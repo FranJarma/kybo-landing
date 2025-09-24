@@ -1,4 +1,4 @@
-import { getFudoToken } from "@/utils/fudoUtils";
+import { createCustomer, getCustomers, getFudoToken } from "@/utils/fudoUtils";
 import { capitalize, slugify } from "@/utils/textUtils";
 import { NextRequest, NextResponse } from "next/server";
 import { CustomerFudoRequest, FudoCustomerResponse } from "../types/fudo";
@@ -29,13 +29,7 @@ export async function POST(req: NextRequest) {
   try {
     const token = await getFudoToken(FUDO_API_KEY, FUDO_API_SECRET);
 
-    const fudoCustomers = await fetch(`${process.env.FUDO_API_URL}/customers`, {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${token}`,
-        "Content-Type": "application/json",
-      },
-    });
+    const fudoCustomers = await getCustomers(token);
 
     const jsonResponse: FudoCustomerResponse = await fudoCustomers.json();
 
@@ -47,7 +41,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Este email ya está registrado" }, { status: 400 });
     }
 
-    const fudoBody: CustomerFudoRequest = {
+    const createCustomerBody: CustomerFudoRequest = {
       data: {
         type: "Customer",
         attributes: {
@@ -61,15 +55,7 @@ export async function POST(req: NextRequest) {
       },
     };
 
-    const fudoUrl = `${process.env.FUDO_API_URL}/customers`;
-    const response = await fetch(fudoUrl, {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${token}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(fudoBody),
-    });
+    const response = await createCustomer(token, createCustomerBody);
 
     if (!response.ok) {
       const error = await response.json();

@@ -39,7 +39,7 @@ export function AboutUs() {
                   <time dateTime="08:00">08:00</time> - <time dateTime="12:00">12:00</time>
                 </span>
                 <span className="col-span-1">
-                  <time dateTime="16:00">16:00</time> - <time dateTime="20:00">20:00</time>
+                  <time dateTime="16:30">16:30</time> - <time dateTime="20:30">20:30</time>
                 </span>
               </div>
               <div className="grid grid-cols-3 items-center gap-4 border-b border-gray-400 pb-2">

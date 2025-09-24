@@ -41,11 +41,17 @@ export const metadata: Metadata = {
     images: [`${baseUrl}/images/og-image.jpg`],
   },
   icons: {
-    icon: [{ url: "/favicon.ico", sizes: "32x32", type: "image/x-icon" }],
+    icon: [
+      { url: "/favicon.png", sizes: "48x48", type: "image/png" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
     apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
-    shortcut: ["/favicon.ico"],
+    shortcut: ["/favicon.png"],
   },
-  manifest: "/site.webmanifest",
+  robots: {
+    follow: true,
+    index: true,
+  },
   other: {
     author: "Kybo",
     keywords:
@@ -59,10 +65,42 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
+    <html lang="es-AR">
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.png" sizes="48x48" type="image/png" />
         <meta name="theme-color" content="#013e5e" />
+        <meta name="geo.region" content="AR-A" />
+        <meta name="geo.placename" content="Salta, Argentina" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "CafeOrCoffeeShop",
+              name: "Kybo",
+              image: `${baseUrl}/images/og-image.jpg`,
+              "@id": baseUrl,
+              url: baseUrl,
+              telephone: "+54 9 3876 19-5620",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "Rivadavia 349",
+                addressLocality: "Salta",
+                addressRegion: "Salta",
+                postalCode: "4400",
+                addressCountry: "AR",
+              },
+              servesCuisine: [
+                "Bubble Tea",
+                "Bubble Waffles",
+                "Cafetería",
+                "Infusiones Alternativas",
+                "Crumble Cookies",
+              ],
+              priceRange: "$3000 - $ 7000",
+            }),
+          }}
+        />
       </head>
       <body className={`${kyboFont.className} antialiased`}>
         <a href="#main-content" className="sr-only focus:not-sr-only">

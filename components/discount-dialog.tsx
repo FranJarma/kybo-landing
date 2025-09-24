@@ -9,11 +9,15 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { NewsletterForm } from "./newsteller-form";
+import { usePathname } from "next/navigation";
 
 export function DiscountDialog() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
 
   useEffect(() => {
+    if (!isHome) return;
     const subscribed = localStorage.getItem("kybo_newsletter_subscribed");
     if (!subscribed) {
       const timeout = setTimeout(() => setOpen(true), 5000);

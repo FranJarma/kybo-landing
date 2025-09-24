@@ -1,6 +1,8 @@
 import { Footer, Header } from "@/components/layout";
 import { AboutUs, Newsletter, Hero, OurProducts, SocialMedia } from "@/components/sections";
 
+export const dynamic = "force-static";
+
 export default function LandingPage() {
   return (
     <div className="flex min-h-screen flex-col bg-[#f8f9fa]">
