@@ -1,18 +1,22 @@
-import { Toaster } from "@/components/ui/sonner";
 import "./globals.css";
 
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { DiscountDialog } from "@/components/discount-dialog";
 
-const kyboFont = localFont({ src: "./../public/fonts/hwt_artz.otf" });
+import { Toaster } from "@/components/ui/sonner";
 
-const baseUrl = process.env.PROD_URL ?? process.env.DEV_URL;
+const kyboFont = localFont({
+  src: "./../public/fonts/hwt_artz.otf",
+  variable: "--font-display",
+  display: "swap",
+});
+
+const baseUrl = "https://kybo.com.ar";
 
 export const metadata: Metadata = {
-  title: "Kybo - Algo diferente a lo común",
+  title: "Kybo | Bubble tea y waffles en la peatonal de Salta",
   description:
-    "En Kybo creamos experiencias únicas a través de nuestros Bubble Teas y Bubble Waffles artesanales, elaborados con ingredientes de primera calidad en Salta, Argentina.",
+    "Bubble teas, shakes y waffles en Kybo. Encontranos en Alberdi 143, en plena peatonal salteña. Explorá nuestro menú y elegí tu próximo antojo.",
   metadataBase: baseUrl ? new URL(baseUrl) : null,
   alternates: {
     canonical: baseUrl ?? undefined,
@@ -36,7 +40,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kybo - Algo diferente a lo común",
+    title: "Kybo | Bubble tea y waffles en la peatonal de Salta",
     description: "Bubble Teas y Waffles artesanales en Salta. Una experiencia única.",
     images: [`${baseUrl}/images/og-image.jpg`],
   },
@@ -84,7 +88,7 @@ export default function RootLayout({
               telephone: "+54 9 3876 19-5620",
               address: {
                 "@type": "PostalAddress",
-                streetAddress: "Rivadavia 349",
+                streetAddress: "Alberdi 143",
                 addressLocality: "Salta",
                 addressRegion: "Salta",
                 postalCode: "4400",
@@ -97,17 +101,18 @@ export default function RootLayout({
                 "Infusiones Alternativas",
                 "Crumble Cookies",
               ],
-              priceRange: "$3000 - $ 7000",
+              menu: "https://kybo.com.ar/menu",
+              sameAs: ["https://www.instagram.com/kybo.arg/", "https://www.tiktok.com/@kybo.arg"],
             }),
           }}
         />
       </head>
-      <body className={`${kyboFont.className} antialiased`}>
-        <a href="#main-content" className="sr-only focus:not-sr-only">
+      <body className={`${kyboFont.variable} antialiased`}>
+        <a href="#main-content" className="skip-link">
           Saltar al contenido
         </a>
         <Toaster richColors position="bottom-center" />
-        <DiscountDialog />
+
         {children}
       </body>
     </html>

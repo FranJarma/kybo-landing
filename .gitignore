@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local visual verification
+/.impeccable/review/
+/.impeccable/checks.mjs
+/.taste-skill/

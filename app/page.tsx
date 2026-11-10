@@ -1,20 +1,28 @@
+import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
+
 import { Footer, Header } from "@/components/layout";
-import { AboutUs, Newsletter, Hero, OurProducts, SocialMedia } from "@/components/sections";
-
+import { AboutUs, Hero, OurProducts, SocialMedia } from "@/components/sections";
 export const dynamic = "force-static";
-
 export default function LandingPage() {
   return (
-    <div className="flex min-h-screen flex-col bg-[#f8f9fa]">
+    <>
       <Header />
-      <main className="flex-1">
+      <main id="main-content" tabIndex={-1}>
         <Hero />
         <OurProducts />
+        <section className="menu-banner" aria-labelledby="menu-title">
+          <div className="shell menu-banner-inner">
+            <h2 id="menu-title">Hay más para tentarte.</h2>
+            <Link className="action" href="/menu">
+              Ver el menú completo <ArrowUpRight size={20} />
+            </Link>
+          </div>
+        </section>
         <AboutUs />
         <SocialMedia />
-        <Newsletter />
       </main>
       <Footer />
-    </div>
+    </>
   );
 }

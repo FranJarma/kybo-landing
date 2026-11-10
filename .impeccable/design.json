@@ -1,0 +1,255 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-06T12:50:03.952Z",
+  "title": "Design System: Kybo",
+  "extensions": {
+    "colorMeta": {
+      "blue": {
+        "role": "primary",
+        "displayName": "Kybo Blue",
+        "canonical": "#013e5e",
+        "tonalRamp": [
+          "oklch(15% 0.0786 239.85)",
+          "oklch(26.43% 0.0786 239.85)",
+          "oklch(37.86% 0.0786 239.85)",
+          "oklch(49.29% 0.0786 239.85)",
+          "oklch(60.71% 0.0786 239.85)",
+          "oklch(72.14% 0.0786 239.85)",
+          "oklch(83.57% 0.0786 239.85)",
+          "oklch(95% 0.0786 239.85)"
+        ]
+      },
+      "orange": {
+        "role": "secondary",
+        "displayName": "Kybo Orange",
+        "canonical": "#ff8000",
+        "tonalRamp": [
+          "oklch(15% 0.1858 52.98)",
+          "oklch(26.43% 0.1858 52.98)",
+          "oklch(37.86% 0.1858 52.98)",
+          "oklch(49.29% 0.1858 52.98)",
+          "oklch(60.71% 0.1858 52.98)",
+          "oklch(72.14% 0.1858 52.98)",
+          "oklch(83.57% 0.1858 52.98)",
+          "oklch(95% 0.1858 52.98)"
+        ]
+      },
+      "cream": {
+        "role": "neutral",
+        "displayName": "Kybo Cream",
+        "canonical": "#fff0d4",
+        "tonalRamp": [
+          "oklch(15% 0.0401 83.13)",
+          "oklch(26.43% 0.0401 83.13)",
+          "oklch(37.86% 0.0401 83.13)",
+          "oklch(49.29% 0.0401 83.13)",
+          "oklch(60.71% 0.0401 83.13)",
+          "oklch(72.14% 0.0401 83.13)",
+          "oklch(83.57% 0.0401 83.13)",
+          "oklch(95% 0.0401 83.13)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Expressive h1; local HWT Artz exposed by Next.js through --font-display."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section headings."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Component and product headings, with documented local overrides."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Descriptions, practical information and navigation; 16px at the mobile breakpoint."
+      },
+      "mobile-nav": {
+        "displayName": "Mobile navigation",
+        "purpose": "Large Arial destination labels in the full-viewport modal navigation below 960px; clamp(24px, 5vw, 32px), line-height 1.6."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "action-transition",
+        "value": "transform 0.2s, background 0.2s",
+        "purpose": "Primary and inverse action feedback."
+      },
+      {
+        "name": "action-hover",
+        "value": "translateY(-3px)",
+        "purpose": "Small action hover movement; surfaces remain shadow-free."
+      },
+      {
+        "name": "action-active",
+        "value": "scale(0.97)",
+        "purpose": "Pressed action feedback."
+      },
+      {
+        "name": "product-hover",
+        "value": "transform 0.35s",
+        "purpose": "Gentle product-photo enlargement to scale(1.035)."
+      },
+      {
+        "name": "art-arrive",
+        "value": "0.8s cubic-bezier(0.16, 1, 0.3, 1) both",
+        "purpose": "One-time supplied-art entrance from opacity 0.6 and translateY(16px) to full opacity and zero translation."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "(prefers-reduced-motion: reduce)",
+        "purpose": "Disable animations and transitions; automatic page scrolling and immediate carousel movement."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "phone-hero-max",
+        "value": "639px"
+      },
+      {
+        "name": "mobile-type-and-products-max",
+        "value": "700px"
+      },
+      {
+        "name": "stacked-location-and-social-max",
+        "value": "799px"
+      },
+      {
+        "name": "compact-navigation-max",
+        "value": "959px"
+      },
+      {
+        "name": "medium-max",
+        "value": "1000px"
+      }
+    ],
+    "accessibility": {
+      "focus": "3px solid currentColor",
+      "focusOffset": "6px",
+      "skipLink": true
+    },
+    "sourceFiles": [
+      "app/globals.css",
+      "app/layout.tsx",
+      "components/layout/header.tsx",
+      "components/sections/hero.tsx",
+      "components/product-carousel.tsx",
+      "components/sections/about-us.tsx",
+      "components/sections/social-media.tsx",
+      "app/menu/page.tsx",
+      "lib/navigation.ts"
+    ],
+    "tonalRampPolicy": "Synthesized preview-only OKLCH ramps with constant hue and chroma and stepped lightness. They are not additional implementation palette tokens."
+  },
+  "components": [
+    {
+      "name": "Primary action",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Orange menu or directions action on blue.",
+      "html": "<a class=\"ds-primary\" href=\"#menu\">Explorá el menú <svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M7 17 17 7M7 7h10v10\"/></svg></a>",
+      "css": ".ds-primary{display:inline-flex;align-items:center;justify-content:center;gap:22px;min-height:56px;padding:14px 26px;border-radius:100px;background:var(--orange);color:var(--blue);font:700 17px/1.6 Arial,Helvetica,sans-serif;text-decoration:none;transition:transform .2s,background .2s}.ds-primary:hover{background:var(--cream);transform:translateY(-3px)}.ds-primary:active{transform:scale(.97)}.ds-primary:focus-visible{outline:3px solid currentColor;outline-offset:6px}@media(prefers-reduced-motion:reduce){.ds-primary,.ds-menu-action,.ds-carousel{transition:none!important;animation:none!important;scroll-behavior:auto!important}}"
+    },
+    {
+      "name": "Compact action",
+      "kind": "button",
+      "refersTo": "button-small",
+      "description": "Compact orange header action.",
+      "html": "<a class=\"ds-primary ds-small\" href=\"#menu\">Ver menú <svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M7 17 17 7M7 7h10v10\"/></svg></a>",
+      "css": ".ds-primary{display:inline-flex;align-items:center;justify-content:center;gap:22px;min-height:56px;padding:14px 26px;border-radius:100px;background:var(--orange);color:var(--blue);font:700 17px/1.6 Arial,Helvetica,sans-serif;text-decoration:none;transition:transform .2s,background .2s}.ds-primary:hover{background:var(--cream);transform:translateY(-3px)}.ds-primary:active{transform:scale(.97)}.ds-primary:focus-visible{outline:3px solid currentColor;outline-offset:6px}@media(prefers-reduced-motion:reduce){.ds-primary,.ds-menu-action,.ds-carousel{transition:none!important;animation:none!important;scroll-behavior:auto!important}}.ds-small{min-height:46px;padding:10px 22px}"
+    },
+    {
+      "name": "Menu band action",
+      "kind": "button",
+      "refersTo": "button-menu",
+      "description": "Inverse blue action for the orange menu band.",
+      "html": "<a class=\"ds-menu-action\" href=\"#menu\">Ver el menú completo <svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M7 17 17 7M7 7h10v10\"/></svg></a>",
+      "css": ".ds-menu-action{display:inline-flex;align-items:center;justify-content:center;gap:22px;min-height:56px;padding:14px 26px;border-radius:100px;background:var(--blue);color:var(--cream);font:700 17px/1.6 Arial,Helvetica,sans-serif;text-decoration:none;transition:transform .2s,background .2s}.ds-menu-action:hover{background:var(--cream);color:var(--blue);transform:translateY(-3px)}.ds-menu-action:active{transform:scale(.97)}.ds-menu-action:focus-visible{outline:3px solid currentColor;outline-offset:6px}@media(prefers-reduced-motion:reduce){.ds-primary,.ds-menu-action,.ds-carousel{transition:none!important;animation:none!important;scroll-behavior:auto!important}}"
+    },
+    {
+      "name": "Text link",
+      "kind": "custom",
+      "description": "Underlined secondary action; hover strengthens the underline.",
+      "html": "<a class=\"ds-text-link\" href=\"#productos\">Conocé tus próximos favoritos <svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M7 17 17 7M7 7h10v10\"/></svg></a>",
+      "css": ".ds-text-link{display:inline-flex;align-items:center;gap:12px;min-height:44px;color:inherit;font:17px/1.6 Arial,Helvetica,sans-serif;text-decoration:underline;text-underline-offset:5px}.ds-text-link:hover{color:inherit;text-decoration-thickness:2px}.ds-text-link:focus-visible{outline:3px solid currentColor;outline-offset:6px}"
+    },
+    {
+      "name": "Carousel arrow",
+      "kind": "button",
+      "refersTo": "carousel-button",
+      "description": "Outlined circular product-rail control.",
+      "html": "<button class=\"ds-carousel\" aria-label=\"Productos siguientes\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M5 12h14m-7-7 7 7-7 7\"/></svg></button>",
+      "css": ".ds-carousel{display:flex;align-items:center;justify-content:center;width:52px;height:52px;border:2px solid var(--blue);border-radius:50%;background:transparent;color:var(--blue);cursor:pointer;transition:background .2s,transform .2s}.ds-carousel:not(:disabled):hover{background:var(--orange);transform:translateY(-2px)}.ds-carousel:disabled{opacity:.35;cursor:default}.ds-carousel:focus-visible{outline:3px solid currentColor;outline-offset:6px}@media(prefers-reduced-motion:reduce){.ds-primary,.ds-menu-action,.ds-carousel{transition:none!important;animation:none!important;scroll-behavior:auto!important}}"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "navigation",
+      "description": "Desktop cream navigation links on a blue field; below 960px the header uses a separate full-viewport Radix Dialog.",
+      "html": "<nav class=\"ds-navigation\" aria-label=\"Principal\"><a href=\"/#favoritos\">Los favoritos</a><a href=\"/#encontranos\">Encontranos</a><a href=\"/#mundo-kybo\">Mundo Kybo</a></nav>",
+      "css": ".ds-navigation{display:flex;gap:32px;align-items:center;background:var(--blue);color:var(--cream);font:17px/1.6 Arial,Helvetica,sans-serif}.ds-navigation a{display:inline-flex;align-items:center;min-height:44px;white-space:nowrap;color:inherit;text-decoration:none}.ds-navigation a:hover{text-decoration:underline;text-underline-offset:6px}.ds-navigation a:focus-visible{outline:3px solid currentColor;outline-offset:6px}"
+    },
+    {
+      "name": "Mobile navigation",
+      "kind": "nav",
+      "refersTo": "mobile-navigation",
+      "description": "Static open-state preview of the full-viewport mobile panel; the original bitmap logo is omitted from this control sample. Production uses the unchanged logo and Radix Dialog: focus X on open, loop focus, lock body scroll, hide background, restore trigger on Escape/X, preserve selected section focus, close at 960px.",
+      "html": "<div class=\"ds-mobile-preview\"><section class=\"ds-mobile-panel\" aria-label=\"Navegación de Kybo\"><div class=\"ds-mobile-shell ds-mobile-header\"><span class=\"ds-mobile-logo-slot\" aria-hidden=\"true\"></span><button class=\"ds-mobile-close\" aria-label=\"Cerrar navegación\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"m18 6-12 12M6 6l12 12\"/></svg></button></div><nav class=\"ds-mobile-shell ds-mobile-nav\" aria-label=\"Principal\"><a href=\"/#favoritos\">Los favoritos</a><a href=\"/#encontranos\">Encontranos</a><a href=\"/#mundo-kybo\">Mundo Kybo</a><a class=\"ds-mobile-action\" href=\"/menu\">Ver menú <svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M7 17 17 7M7 7h10v10\"/></svg></a></nav></section></div>",
+      "css": ".ds-mobile-preview{position:relative;transform:translateZ(0);height:100dvh;overflow:hidden;--header-height:76px;--space:clamp(20px,4.5vw,40px);font:17px/1.6 Arial,Helvetica,sans-serif}.ds-mobile-panel{position:fixed;inset:0;z-index:100;display:flex;flex-direction:column;height:100dvh;padding-bottom:env(safe-area-inset-bottom);overflow-y:auto;overscroll-behavior:contain;background:var(--blue);color:var(--cream);outline:none}.ds-mobile-shell{width:min(1320px,100% - var(--space)*2);margin-inline:auto}.ds-mobile-header{position:sticky;top:0;z-index:1;display:flex;flex-shrink:0;align-items:center;justify-content:space-between;min-height:var(--header-height);background:var(--blue)}.ds-mobile-logo-slot{width:100px}.ds-mobile-close{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border:0;background:transparent;color:var(--cream);cursor:pointer}.ds-mobile-nav{display:flex;flex:1 0 auto;flex-direction:column;align-items:flex-start;justify-content:center;gap:16px;padding-block:32px}.ds-mobile-nav>a{color:inherit;text-decoration:none}.ds-mobile-nav>a:not(.ds-mobile-action){display:inline-flex;align-items:center;min-height:56px;font-size:clamp(24px,5vw,32px)}.ds-mobile-nav>a:not(.ds-mobile-action):hover{text-decoration:underline;text-underline-offset:6px}.ds-mobile-action{display:inline-flex;align-items:center;justify-content:center;gap:22px;min-height:56px;padding:14px 26px;border-radius:100px;background:var(--orange);color:var(--blue)!important;font-weight:700;margin-top:16px;transition:transform .2s,background .2s}.ds-mobile-action:hover{background:var(--cream);transform:translateY(-3px)}.ds-mobile-action:active{transform:scale(.97)}.ds-mobile-nav>a:focus-visible,.ds-mobile-close:focus-visible{outline:3px solid currentColor;outline-offset:6px}@media(max-width:700px){.ds-mobile-preview{font-size:16px}}@media(prefers-reduced-motion:reduce){.ds-mobile-action{transition:none!important;animation:none!important;scroll-behavior:auto!important}}"
+    },
+    {
+      "name": "Hours panel",
+      "kind": "card",
+      "refersTo": "hours-panel",
+      "description": "Arched cream outline on a blue section, without shadows.",
+      "html": "<section class=\"ds-hours\"><h3>Nos vemos por acá</h3><p>Ojito con los horarios, para que no te quedes con las ganas.</p><dl><div><dt>Lunes a sábado</dt><dd>08:00 a 12:00<br>16:30 a 20:30</dd></div><div><dt>Domingo</dt><dd>Cerrado, pa.</dd></div></dl></section>",
+      "css": ".ds-hours{padding:36px;border:2px solid var(--cream);border-radius:80px 80px 16px 16px;background:var(--blue);color:var(--cream);font:17px/1.6 Arial,Helvetica,sans-serif}.ds-hours h3{font:400 clamp(26px,2.5vw,34px)/1.04 var(--font-display),sans-serif;margin:20px 0 0;text-wrap:balance}.ds-hours p{margin:20px 0;max-width:64ch}.ds-hours dl{margin:24px 0 0}.ds-hours dl>div{display:flex;justify-content:space-between;gap:20px;padding:18px 0}.ds-hours dt{font-weight:700}.ds-hours dd{margin:0;font-variant-numeric:tabular-nums;text-align:right}@media(max-width:700px){.ds-hours{padding:26px;border-radius:65px 65px 16px 16px;font-size:16px}.ds-hours h3{font-size:30px}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Kybo's retro art playground",
+    "overview": "Kybo combines Art Deco stepped arches, retro curves and strong rounded lettering with the satin volumes of Plastic Art. Large blue and cream fields create a calm structure around an expressive, youthful food brand. Controlled asymmetry and playful anti-art references give the imagery its character while the reading order stays clear.\n\nThe supplied illustration (`public/images/kybo-art.webp`) anchors this world. Its sculptural food forms, orange curves, stepped arch and checkerboard are illustration, not evidence of a product for sale. Real products use Kybo's own photographs; original logos remain untouched. The visual system documents the implemented stylesheet, with the user's explicit brief supplying its descriptive language.",
+    "keyCharacteristics": [
+      "Broad blue and cream bands with confident orange actions.",
+      "Rounded display lettering paired with readable body copy.",
+      "Art Deco geometry and satin illustrated volumes.",
+      "Controlled asymmetric art alongside truthful product photography.",
+      "Flat interface surfaces, clear keyboard focus and restrained motion."
+    ],
+    "rules": [
+      {
+        "name": "The Three-Color Rule",
+        "body": "Build interface hierarchy with the established blue, orange and cream; preserve additional colors already present in supplied artwork and photography.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two-Voice Rule",
+        "body": "Use HWT Artz for short expressive headings and Arial for information and interaction. Do not redraw the logo as display text.",
+        "section": "typography"
+      },
+      {
+        "name": "The Illustrated-Depth Rule",
+        "body": "Let the artwork carry sculptural volume; keep buttons and panels flat in material.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do use the normative palette and the local HWT Artz/Arial pairing.",
+      "Do keep supplied artwork, original logos and real product photography in their established roles.",
+      "Do use broad color fields, rounded forms and controlled asymmetric compositions.",
+      "Do preserve visible current-color focus, mobile reflow and reduced-motion behavior.",
+      "Do keep actual product silhouettes visible and image proportions credible."
+    ],
+    "donts": [
+      "Don't generate replacement product photography or imply illustrated products are actual catalog items.",
+      "Don't redraw, distort or recolor the original logos.",
+      "Don't add interface shadows to imitate the illustration's Plastic Art material.",
+      "Don't add unrelated colors or decorative fonts to the interface.",
+      "Don't trade readable information and predictable navigation for visual disorder."
+    ]
+  }
+}

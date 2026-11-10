@@ -1,78 +1,82 @@
+"use client";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import Image from "next/image";
+import { useRef, useState } from "react";
 
-import { Card, CardContent } from "@/components/ui/card";
 import { Product } from "./types";
-
-type ProductCarouselProps = {
-  description: string;
-  products: Product[];
-  title: string;
-};
-
-function ProductCard({ product }: { product: Product }) {
-  return (
-    <Card className="flex h-full flex-col overflow-hidden shadow transition-all hover:shadow-lg">
-      <div className="relative aspect-square w-full bg-[#f8f9fa]">
-        <span className="bg-kybo-orange text-md absolute top-2 right-2 z-10 rounded-full px-3 py-1 leading-5 font-semibold tracking-wider text-white">
-          {product.category}
-        </span>
-        <Image
-          src={product.image || "/placeholder.svg"}
-          alt={product.name}
-          fill
-          className="object-cover"
-        />
-      </div>
-      <CardContent className="flex flex-grow flex-col gap-4 p-4">
-        <h3 className="text-kybo-blue text-lg font-bold">{product.name}</h3>
-        <p className="text-md mt-2 text-gray-500">{product.description}</p>
-      </CardContent>
-    </Card>
-  );
-}
-
-function ProductMobileList({ products }: { products: Product[] }) {
-  return (
-    <div className="hide-scrollbar overflow-x-auto px-4 md:hidden">
-      <div className="flex snap-x snap-mandatory flex-nowrap gap-6 scroll-smooth pb-4">
-        {products.map((product, index) => (
-          <div key={index} className="min-w-[250px] snap-start">
-            <ProductCard product={product} />
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function ProductDesktopList({ products }: { products: Product[] }) {
-  const repeated = Array(10).fill(products).flat();
-
-  return (
-    <div className="hidden overflow-hidden md:block">
-      <div className="animate-scroll flex gap-6 px-4">
-        {repeated.map((product, index) => (
-          <div key={index} className="w-[300px] flex-shrink-0">
-            <ProductCard product={product} />
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
+type ProductCarouselProps = { description: string; products: Product[]; title: string };
 export function ProductCarousel({ description, products, title }: ProductCarouselProps) {
+  const rail = useRef<HTMLUListElement>(null);
+  const [edges, setEdges] = useState({ start: true, end: false });
+  const update = () => {
+    const el = rail.current;
+    if (el)
+      setEdges({
+        start: el.scrollLeft < 4,
+        end: el.scrollLeft + el.clientWidth >= el.scrollWidth - 4,
+      });
+  };
+  const move = (direction: number) => {
+    const el = rail.current;
+    if (el)
+      el.scrollBy({
+        left: direction * ((el.firstElementChild?.getBoundingClientRect().width ?? 320) + 24),
+        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+          ? "instant"
+          : "smooth",
+      });
+  };
   return (
-    <div className="w-full">
-      <div className="mb-6 flex flex-col items-center justify-center space-y-4 text-center">
-        <div className="space-y-2">
-          <h2 className="text-kybo-blue text-3xl font-bold md:text-4xl">{title}</h2>
-          <p className="mx-auto max-w-[700px] text-lg text-gray-500 md:text-xl">{description}</p>
+    <div>
+      <div className="section-heading">
+        <div>
+          <h2 id="products-title">{title}</h2>
+          <p>{description}</p>
+        </div>
+        <div className="carousel-controls">
+          <button
+            className="round-button"
+            onClick={() => move(-1)}
+            disabled={edges.start}
+            aria-label="Productos anteriores"
+            aria-controls="product-list"
+          >
+            <ArrowLeft />
+          </button>
+          <button
+            className="round-button"
+            onClick={() => move(1)}
+            disabled={edges.end}
+            aria-label="Productos siguientes"
+            aria-controls="product-list"
+          >
+            <ArrowRight />
+          </button>
         </div>
       </div>
-
-      <ProductMobileList products={products} />
-      <ProductDesktopList products={products} />
+      <ul
+        id="product-list"
+        ref={rail}
+        onScroll={update}
+        className="product-rail"
+        tabIndex={0}
+        aria-label="Nuestros nueve productos; desplazate para explorar"
+      >
+        {products.map(product => (
+          <li key={product.name} className="product-card">
+            <div className="product-photo">
+              <Image
+                src={product.image}
+                alt={product.name}
+                fill
+                sizes="(max-width:700px) 80vw, 360px"
+              />
+            </div>
+            <h3>{product.name}</h3>
+            <p>{product.description}</p>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

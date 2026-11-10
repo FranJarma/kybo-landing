@@ -1,85 +1,72 @@
+import { landingSections } from "@/lib/navigation";
+
 import { ProductCarousel } from "../product-carousel";
 import { CategoryEnum, Product } from "../types";
-
 const ourProducts: Product[] = [
   {
-    name: "Kybo cream",
-    description: "Masa de vainilla o choco, con crema chantilly y toppings",
-    image: "/images/kybocream.webp",
-    category: CategoryEnum.SWEET_WAFFLE,
+    name: "Kybo Shake",
+    description: "El de la foto: Oreo. Un antojo para tomar bien frío.",
+    image: "kybo-shake",
   },
   {
-    name: "Frozono",
-    description: "Masa de vainilla o choco, con helado y topppings",
-    image: "/images/frozono.webp",
-    category: CategoryEnum.SWEET_WAFFLE,
+    name: "Bubble Sunrise",
+    description: "Té chai, frutos rojos, naranja y perlas explosivas de mango.",
+    image: "bubble-sunrise",
   },
   {
-    name: "Classic",
-    description: "El famoso y popular: jamón y queso.",
-    image: "/images/classic.webp",
-    category: CategoryEnum.SALTY_WAFFLE,
+    name: "Blueberry Bubble",
+    description: "Té chai, maracuyá, naranja y perlas explosivas de arándanos.",
+    image: "blueberry-bubble",
   },
   {
-    name: "Distinto",
-    description: "Jamón crudo, rúcula y queso.",
-    image: "/images/distinto.webp",
-    category: CategoryEnum.SALTY_WAFFLE,
+    name: "Kybo Frozen",
+    description: "El de la foto: mango y durazno. Bien fresco, bien Kybo.",
+    image: "kybo-frozen",
   },
   {
-    name: "Pinky",
-    description: "Mortadella, crema de pesto, tomate y queso.",
-    image: "/images/pinky.webp",
-    category: CategoryEnum.SALTY_WAFFLE,
+    name: "Kybo Soft",
+    description: "El de la foto: frutilla. Para darle una pausa dulce al día.",
+    image: "kybo-soft",
   },
   {
-    name: "Matcha Iced Latte",
-    description: "Té verde matcha con leche, dulce y refrescante.",
-    image: "/images/matchaicedlatte.webp",
-    category: CategoryEnum.BUBBLE_AND_JELLY,
-  },
-  {
-    name: "Coffee Iced Latte",
-    description: "Café de especialidad con leche, especial para tu pre entreno.",
-    image: "/images/coffeeicedlatte.webp",
-    category: CategoryEnum.BUBBLE_AND_JELLY,
+    name: "Waffle de chipá",
+    description: "Classic: el famoso y popular jamón y queso.",
+    image: "waffle-chipa",
   },
   {
     name: "Taro Iced Latte",
     description: "Taro cremoso, con notas de vainilla y batata dulce.",
-    image: "/images/taroicedlatte.webp",
-    category: CategoryEnum.BUBBLE_AND_JELLY,
+    image: "taro-iced-latte",
   },
   {
-    name: "Kybo Tea",
-    description: "Té Chai infusionado con leche y endulzado al punto perfecto.",
-    image: "/images/kybotea.webp",
-    category: CategoryEnum.BUBBLE_AND_JELLY,
+    name: "Matcha Iced Latte",
+    description: "Té verde matcha con leche, dulce y refrescante.",
+    image: "matcha-iced-latte",
   },
   {
-    name: "Bubble Sunrise",
-    description:
-      "Té chai con mucho hielo, pulpa de frutos rojos, jugo de naranja y perlas explosivas de mango.",
-    image: "/images/mangobubblesunrise.webp",
-    category: CategoryEnum.EXPLOSIVE_TEA,
+    name: "Blue Matcha Iced Latte",
+    description: "Tu próximo favorito puede ser azul. Descubrilo en el menú.",
+    image: "blue-matcha-iced-latte",
   },
-  {
-    name: "Blueberry Bubble",
-    description:
-      "Té chai con mucho hielo, pulpa de maracuyá, jugo de naranja y perlas explosivas de arándanos.",
-    image: "/images/blueberrybubble.webp",
-    category: CategoryEnum.EXPLOSIVE_TEA,
-  },
-];
-
+].map(p => ({
+  ...p,
+  image: `/images/products/${p.image}.webp`,
+  category: CategoryEnum.BUBBLE_AND_JELLY,
+}));
 export function OurProducts() {
   return (
-    <section id="nuestros-productos" className="bg-kybo-blue/5 w-full py-32 md:py-48">
-      <div className="px-4 md:px-6">
+    <section
+      id={landingSections.favorites.id}
+      className="products section-pad section-anchor"
+      aria-labelledby="products-title"
+      tabIndex={-1}
+    >
+      <span id={landingSections.favorites.legacyId} className="anchor-alias" aria-hidden="true" />
+      <div className="shell">
         <ProductCarousel
           products={ourProducts}
-          title="Nuestros productos"
-          description="Una mordida y/o sorbo y chao. Se te reinicia el cerebro, encima con combinaciones que ni tu abuela se animaría a mezclar, pero nosotros sí."
+          title="¿Cuál te tienta hoy?"
+          description="Una mordida, un sorbo y chao. Encontrá ese sabor que te cambia el día."
         />
       </div>
     </section>
