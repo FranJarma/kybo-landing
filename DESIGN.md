@@ -187,7 +187,7 @@ Alternate broad blue and cream sections, with the orange menu band acting as a c
 
 ## Elevation & Depth
 
-Interface surfaces use no box shadows. Blue and cream fields, outlines, overlapping geometry and imagery establish hierarchy. Plastic Art depth belongs to the supplied illustration's satin volumes; it does not imply glossy or raised controls. Existing action hover movement is small (`translateY(-3px)`) and active feedback is brief (`scale(0.97)`).
+Interface controls use no box shadows. Blue and cream fields, outlines, overlapping geometry and imagery establish hierarchy. Plastic Art depth belongs to the supplied illustration's satin volumes; it does not imply glossy or raised controls. The menu book is the specific exception: paper curvature and restrained shadows communicate a physical page turn. Existing action hover movement is small (`translateY(-3px)`) and active feedback is brief (`scale(0.97)`).
 
 **The Illustrated-Depth Rule.** Let the artwork carry sculptural volume; keep buttons and panels flat in material.
 
@@ -225,15 +225,19 @@ The current Figma page `113:666` is authoritative for this surface. Its 43 produ
 
 The rail shows one complete card below 640px, two from 640–1023px and three from 1024px, including its last page. Its maximum width is 1248px. Page gutters are 24px on phones; wider layouts reserve 64px per side for lateral controls until the maximum width produces larger symmetric gutters. Gaps are 24px. Controls are 44px on phones and 48px on wider screens. Filter buttons use real Barlow SemiBold (600), 15px labels and a 44px minimum height; the selected filter is orange. Horizontal filter scrolling retains inset keyboard focus rings.
 
+On fine-pointer hover, the photograph scales to `1.045` over `350ms` and returns on exit; the card and circle retain their dimensions. A rounded SVG outline traces clockwise over `750ms` using the product's existing ingredient-circle color. The outline fades on exit. Reduced motion removes scaling and transitions, leaving immediate color feedback. Touch scrolling retains its existing behavior.
+
 Match Figma's section rhythm: 32px/28px top/bottom padding and 20px group gaps on phones; 48px/40px padding and 24px gaps on wider screens. The rail supports native touch scrolling, Left/Right and Home/End keys, accessible position announcements and disabled end controls. Changing category remounts the rail at its start. There is no automatic advance; reduced motion uses immediate navigation. Catalog data, cards, filters and navigation live in separate files. Four approved drink photos use content-versioned filenames to avoid stale optimized images; original files remain available.
 
 ### Hours and Media Panels
 
 The hours panel is cream-outlined on blue, with the established arched silhouette and frontmatter padding; mobile padding reduces to `26px`. Times use tabular numerals and right alignment. Media panels use flat blue surfaces, cream text and the panel radius. Load external video only after the existing explicit load action, preserving the fallback destination link.
 
-### Menu Previews
+### Menu Book
 
-Show all nine pages of the current `public/menu.pdf` through full, uncropped WebP previews rendered directly from that document. Filenames include its SHA256 prefix to avoid stale optimized previews; preserve the previous image files. Use one column below 640px, two from 640px and three from 1024px, with 24px gaps. Each preview opens its corresponding PDF page. Keep the direct open/download actions and the Fudo alternative.
+`/menu` fills `100dvh` with a compact blue toolbar, a cream reading area and persistent page controls. It uses the supplied Ultra HD `public/menu.pdf` unchanged, with all nine pages rendered directly into uncropped, versioned WebP images. Reader images total about 1.9 MB; the original PDF is fetched only through its explicit download action. Keep the original logo, return link and Fudo alternative.
+
+Fit complete pages within the available reading area: two open pages when its width reaches 800px, otherwise one. A route-specific HTML page-flip engine provides soft paper curvature and changing shadows over about `650ms`. Its isolated same-origin frame disposes the engine's animation loop on resize and unmount. Buttons, horizontal touch swipes, Left/Right and Home/End navigate; a select jumps to a spread and zoom opens an accessible, scrollable high-resolution page dialog. Fullscreen is available where the browser supports it. Reduced motion uses immediate page changes without decorative folds. If the effect fails, the static-page fallback retains navigation, zoom and PDF access. Actual extracted PDF text remains available to assistive technology.
 
 ### Focus and Motion
 

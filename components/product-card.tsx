@@ -1,4 +1,5 @@
 import Image from "next/image";
+import type { CSSProperties } from "react";
 
 import type { CarouselProduct } from "@/lib/products";
 
@@ -6,7 +7,14 @@ import styles from "./product-carousel.module.css";
 
 export function ProductCard({ product }: { product: CarouselProduct }) {
   return (
-    <li className={styles.card} data-product-id={product.id}>
+    <li
+      className={styles.card}
+      data-product-id={product.id}
+      style={{ "--product-color": product.color } as CSSProperties}
+    >
+      <svg className={styles.cardOutline} aria-hidden="true" focusable="false">
+        <rect className={styles.cardTrace} x="1" y="1" rx="15" pathLength="1" />
+      </svg>
       <h3>{product.name}</h3>
       <div className={styles.visual}>
         <span

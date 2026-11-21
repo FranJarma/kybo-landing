@@ -83,6 +83,7 @@
   display: none;
 }
 .card {
+  position: relative;
   flex: 0 0 100%;
   min-width: 0;
   display: flex;
@@ -96,6 +97,28 @@
   background: #fffaf0;
   scroll-snap-align: start;
   text-align: center;
+}
+.cardOutline {
+  position: absolute;
+  inset: -1px;
+  z-index: 2;
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  overflow: visible;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 140ms ease;
+}
+.cardTrace {
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+  fill: none;
+  stroke: var(--product-color);
+  stroke-width: 2;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  vector-effect: non-scaling-stroke;
+  transition: stroke-dashoffset 750ms cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 .card h3 {
   display: flex;
@@ -129,6 +152,19 @@
 .visual img {
   z-index: 1;
   object-fit: contain;
+  transform-origin: center 58%;
+  transition: transform 350ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+@media (hover: hover) and (pointer: fine) {
+  .card:hover .visual img {
+    transform: scale(1.045);
+  }
+  .card:hover .cardOutline {
+    opacity: 1;
+  }
+  .card:hover .cardTrace {
+    stroke-dashoffset: 0;
+  }
 }
 .card p {
   display: flex;
@@ -258,6 +294,14 @@
   }
 }
 @media (prefers-reduced-motion: reduce) {
+  .visual img,
+  .cardOutline,
+  .cardTrace {
+    transition: none;
+  }
+  .card:hover .visual img {
+    transform: none;
+  }
   .rail,
   .filters {
     scroll-behavior: auto;
