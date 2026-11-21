@@ -7,28 +7,48 @@ colors:
   cream: "#fff0d4"
 typography:
   display:
-    fontFamily: "var(--font-display), sans-serif"
-    fontSize: "clamp(48px, 6.5vw, 96px)"
-    fontWeight: 400
+    fontFamily: "var(--font-barlow), Arial, Helvetica, sans-serif"
+    fontSize: "clamp(48px, 6vw, 88px)"
+    fontWeight: 800
     lineHeight: 1.04
+    letterSpacing: "-0.025em"
   headline:
-    fontFamily: "var(--font-display), sans-serif"
+    fontFamily: "var(--font-barlow), Arial, Helvetica, sans-serif"
     fontSize: "clamp(36px, 4.5vw, 64px)"
-    fontWeight: 400
+    fontWeight: 800
     lineHeight: 1.04
+    letterSpacing: "-0.025em"
   title:
-    fontFamily: "var(--font-display), sans-serif"
+    fontFamily: "var(--font-barlow), Arial, Helvetica, sans-serif"
     fontSize: "clamp(26px, 2.5vw, 34px)"
-    fontWeight: 400
-    lineHeight: 1.04
+    fontWeight: 700
+    lineHeight: 1.15
+    letterSpacing: "-0.015em"
   body:
-    fontFamily: "Arial, Helvetica, sans-serif"
+    fontFamily: "var(--font-barlow), Arial, Helvetica, sans-serif"
     fontSize: "17px"
+    fontWeight: 400
+    lineHeight: 1.6
+  lead:
+    fontFamily: "var(--font-barlow), Arial, Helvetica, sans-serif"
+    fontSize: "20px"
+    fontWeight: 500
+    lineHeight: 1.5
+  navigation:
+    fontFamily: "var(--font-barlow), Arial, Helvetica, sans-serif"
+    fontSize: "17px"
+    fontWeight: 600
+    lineHeight: 1.6
+  action:
+    fontFamily: "var(--font-barlow), Arial, Helvetica, sans-serif"
+    fontSize: "17px"
+    fontWeight: 700
     lineHeight: 1.6
   mobile-nav:
-    fontFamily: "Arial, Helvetica, sans-serif"
+    fontFamily: "var(--font-barlow), Arial, Helvetica, sans-serif"
     fontSize: "clamp(24px, 5vw, 32px)"
-    lineHeight: 1.6
+    fontWeight: 600
+    lineHeight: 1.3
 rounded:
   action: "100px"
   panel: "16px"
@@ -115,22 +135,27 @@ Deep blue grounds the brand, warm cream opens breathing room, and vivid orange m
 
 ## Typography
 
-**Display Font:** Local HWT Artz (`public/fonts/hwt_artz.otf`), loaded through Next.js as `--font-display`, with sans-serif fallback.
+**Family:** Local Barlow (`public/fonts/barlow/`), loaded through Next.js as `--font-barlow`. It also supplies Tailwind's sans family. Arial and Helvetica are loading fallbacks, with Next.js adjusting fallback metrics.
 
-**Body Font:** Arial, Helvetica, sans-serif.
+**Menu reference:** The supplied PDF embeds Barlow ExtraBold (800) for category headings and Barlow Bold (700) for product names. Its large “menú!” word uses a different display face; the requested website treatment uses Barlow throughout the interface and keeps the original logo image.
 
-**Character:** Heavy-looking, rounded retro display forms create the voice at normal font weight. Straightforward body type keeps descriptions, addresses, navigation and practical information readable.
+**Character:** ExtraBold headings and Bold product names carry the menu's confident voice. Regular descriptions, Medium introductions and SemiBold navigation create contrast within one family. Keep the source copy's capitalization and the existing left alignment on phones.
+
+**Delivery:** Five unmodified WOFF2 Latin subsets (400, 500, 600, 700 and 800), about 110 KiB total, are served locally with `font-display: swap`. Spanish accents and punctuation are included. The OFL license and source details live beside the fonts; there is no runtime Google Fonts request.
 
 ### Hierarchy
 
 - **Display:** The frontmatter display role is the desktop h1. The phone hero uses its own fluid size (`clamp(40px, 10.5vw, 64px)`), with a separate tablet size (`clamp(40px, 6vw, 64px)`).
 - **Headline:** The frontmatter headline role is h2. Short lines and balanced wrapping suit section entrances.
-- **Title:** The frontmatter title role is h3. Product names use a local size (`30px`, then `28px` on mobile).
-- **Body:** The frontmatter body role is the desktop baseline. Mobile body copy becomes smaller (`16px`), paragraphs stay within a readable measure (`64ch`), and hero copy uses a larger size (`20px`, then `18px` on mobile).
-- **Action labels:** Inherit body type and use bold weight (`700`); avoid introducing a separate decorative label font.
-- **Mobile navigation:** Use the frontmatter mobile-nav role for section links in the full-screen menu. Its larger Arial labels distinguish destination choices from the unchanged action-label typography.
+- **Title:** The frontmatter title role is h3, using Bold (700) with more leading than display titles. Product names use a local size (`30px`, then `28px` on mobile).
+- **Body:** Regular (400) is the desktop baseline. Mobile body copy becomes smaller (`16px`), and paragraphs stay within a readable measure (`64ch`).
+- **Introductions:** Medium (500), `20px/1.5` on desktop; hero copy becomes `18px` on smaller screens. The menu-page introduction shares this role.
+- **Navigation and links:** SemiBold (600). Hero secondary links and the address use `16px`; the location-section address uses `24px`, then `21px` on mobile.
+- **Action labels:** Bold (700), inherited size; keep the current button heights and spacing.
+- **Mobile navigation:** Use the frontmatter mobile-nav role for section links in the full-screen menu, with SemiBold (600) and `1.3` line height. The action keeps its separate Bold role.
+- **Footer statement:** ExtraBold (800), `clamp(42px, 5vw, 72px)/1.05`, with display tracking. Existing `13px` copyright and `14px` embed notes remain supporting metadata.
 
-**The Two-Voice Rule.** Use HWT Artz for short expressive headings and Arial for information and interaction. Do not redraw the logo as display text.
+**The One-Family Rule.** Use Barlow's real weights to distinguish display, product, navigation and reading roles. The logo remains the original image.
 
 ## Layout
 

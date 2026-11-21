@@ -5,10 +5,17 @@ import localFont from "next/font/local";
 
 import { Toaster } from "@/components/ui/sonner";
 
-const kyboFont = localFont({
-  src: "./../public/fonts/hwt_artz.otf",
-  variable: "--font-display",
+const barlow = localFont({
+  src: [
+    { path: "../public/fonts/barlow/barlow-latin-400.woff2", weight: "400", style: "normal" },
+    { path: "../public/fonts/barlow/barlow-latin-500.woff2", weight: "500", style: "normal" },
+    { path: "../public/fonts/barlow/barlow-latin-600.woff2", weight: "600", style: "normal" },
+    { path: "../public/fonts/barlow/barlow-latin-700.woff2", weight: "700", style: "normal" },
+    { path: "../public/fonts/barlow/barlow-latin-800.woff2", weight: "800", style: "normal" },
+  ],
+  variable: "--font-barlow",
   display: "swap",
+  fallback: ["Arial", "Helvetica", "sans-serif"],
 });
 
 const baseUrl = "https://kybo.com.ar";
@@ -107,7 +114,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${kyboFont.variable} antialiased`}>
+      <body className={`${barlow.variable} antialiased`}>
         <a href="#main-content" className="skip-link">
           Saltar al contenido
         </a>
