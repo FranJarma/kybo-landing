@@ -1,34 +1,14 @@
 "use client";
 
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import Image from "next/image";
-import { useEffect, useId, useRef, useState } from "react";
+import { useId, useState } from "react";
 
-import { type CarouselProduct, productCategories, type ProductCategory } from "@/lib/products";
+import { useProductRail } from "@/hooks/use-product-rail";
+import { type CarouselProduct, productCategories } from "@/lib/products";
 
+import { ProductCard } from "./product-card";
 import styles from "./product-carousel.module.css";
-
-function ProductCard({ product }: { product: CarouselProduct }) {
-  return (
-    <li className={styles.card}>
-      <h3>{product.name}</h3>
-      <div className={styles.visual}>
-        <span
-          className={styles.circle}
-          style={{ backgroundColor: product.color }}
-          aria-hidden="true"
-        />
-        <Image
-          src={product.image}
-          alt={product.name}
-          fill
-          sizes="(min-width: 1440px) 352px, (min-width: 1024px) 28vw, (min-width: 640px) 40vw, 85vw"
-        />
-      </div>
-      <p>{product.description}</p>
-    </li>
-  );
-}
+import { ProductCategoryFilters, type ProductFilter } from "./product-category-filters";
 
 function ProductRail({
   category,
@@ -37,56 +17,8 @@ function ProductRail({
   category: string;
   products: readonly CarouselProduct[];
 }) {
-  const rail = useRef<HTMLUListElement>(null);
   const id = useId();
-  const [position, setPosition] = useState({ start: true, end: true, first: 1, last: 1 });
-
-  useEffect(() => {
-    const element = rail.current;
-    if (!element) return;
-    const update = () => {
-      const card = element.firstElementChild;
-      if (!card) return;
-      const gap = Number.parseFloat(getComputedStyle(element).columnGap) || 0;
-      const step = card.getBoundingClientRect().width + gap;
-      const first = Math.round(element.scrollLeft / step) + 1;
-      const visible = Math.round((element.clientWidth + gap) / step);
-      const nextPosition = {
-        start: element.scrollLeft < 2,
-        end: element.scrollLeft + element.clientWidth >= element.scrollWidth - 2,
-        first,
-        last: Math.min(products.length, first + visible - 1),
-      };
-      setPosition(current =>
-        current.start === nextPosition.start &&
-        current.end === nextPosition.end &&
-        current.first === nextPosition.first &&
-        current.last === nextPosition.last
-          ? current
-          : nextPosition,
-      );
-    };
-    const observer = new ResizeObserver(update);
-    observer.observe(element);
-    element.addEventListener("scroll", update, { passive: true });
-    update();
-    return () => {
-      observer.disconnect();
-      element.removeEventListener("scroll", update);
-    };
-  }, [products]);
-
-  const move = (direction: number) => {
-    const element = rail.current;
-    if (!element) return;
-    const gap = Number.parseFloat(getComputedStyle(element).columnGap) || 0;
-    element.scrollBy({
-      left: direction * (element.clientWidth + gap),
-      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
-        ? "instant"
-        : "smooth",
-    });
-  };
+  const { move, position, rail } = useProductRail(products.length);
 
   return (
     <>
@@ -98,7 +30,7 @@ function ProductRail({
       >
         <button
           className={styles.previous}
-          onClick={() => move(-1)}
+          onClick={() => move("previous")}
           disabled={position.start}
           aria-label="Productos anteriores"
           aria-controls={id}
@@ -112,9 +44,13 @@ function ProductRail({
           tabIndex={0}
           aria-label={`Productos de ${category}`}
           onKeyDown={event => {
+            if (event.altKey || event.ctrlKey || event.metaKey) return;
             if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
               event.preventDefault();
-              move(event.key === "ArrowLeft" ? -1 : 1);
+              move(event.key === "ArrowLeft" ? "previous" : "next");
+            } else if (event.key === "Home" || event.key === "End") {
+              event.preventDefault();
+              move(event.key === "Home" ? "first" : "last");
             }
           }}
         >
@@ -124,7 +60,7 @@ function ProductRail({
         </ul>
         <button
           className={styles.next}
-          onClick={() => move(1)}
+          onClick={() => move("next")}
           disabled={position.end}
           aria-label="Productos siguientes"
           aria-controls={id}
@@ -143,7 +79,7 @@ function ProductRail({
 }
 
 export function ProductCarousel({ products }: { products: readonly CarouselProduct[] }) {
-  const [category, setCategory] = useState<ProductCategory | "all">("all");
+  const [category, setCategory] = useState<ProductFilter>("all");
   const categories = [{ id: "all" as const, label: "Todos" }, ...productCategories];
   const filteredProducts =
     category === "all" ? products : products.filter(product => product.category === category);
@@ -154,26 +90,12 @@ export function ProductCarousel({ products }: { products: readonly CarouselProdu
         <h2 id="products-title">
           ¿Cuál te tienta <span>hoy?</span>
         </h2>
-        <p>Una mordida, un sorbo y chao. Encontrá ese sabor que te cambia el día.</p>
+        <p>
+          Una mordida, un sorbo y chao. <br className={styles.mobileBreak} />
+          Encontrá ese sabor que te cambia el día.
+        </p>
       </header>
-      <div className={styles.filters} role="group" aria-label="Filtrar productos por categoría">
-        {categories.map(item => (
-          <button
-            key={item.id}
-            type="button"
-            aria-pressed={category === item.id}
-            onClick={event => {
-              setCategory(item.id);
-              event.currentTarget.scrollIntoView({ block: "nearest", inline: "nearest" });
-            }}
-          >
-            {item.label} ·{" "}
-            {item.id === "all"
-              ? products.length
-              : products.filter(product => product.category === item.id).length}
-          </button>
-        ))}
-      </div>
+      <ProductCategoryFilters products={products} selected={category} onSelect={setCategory} />
       <ProductRail key={category} products={filteredProducts} category={categoryLabel} />
       <div className={styles.customization}>
         <h3>Tu Kybo, a tu manera.</h3>

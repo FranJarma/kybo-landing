@@ -18,6 +18,24 @@ const barlow = localFont({
   fallback: ["Arial", "Helvetica", "sans-serif"],
 });
 
+const barlowCondensed = localFont({
+  src: [
+    {
+      path: "../public/fonts/barlow-condensed/barlow-condensed-latin-700.woff2",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/barlow-condensed/barlow-condensed-latin-900.woff2",
+      weight: "900",
+      style: "normal",
+    },
+  ],
+  variable: "--font-barlow-condensed",
+  display: "swap",
+  preload: false,
+});
+
 const baseUrl = "https://kybo.com.ar";
 
 export const metadata: Metadata = {
@@ -114,7 +132,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${barlow.variable} antialiased`}>
+      <body className={`${barlow.variable} ${barlowCondensed.variable} antialiased`}>
         <a href="#main-content" className="skip-link">
           Saltar al contenido
         </a>

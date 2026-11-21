@@ -2,12 +2,13 @@ import { landingSections } from "@/lib/navigation";
 import { products } from "@/lib/products";
 
 import { ProductCarousel } from "../product-carousel";
+import styles from "../product-carousel.module.css";
 
 export function OurProducts() {
   return (
     <section
       id={landingSections.favorites.id}
-      className="products section-pad section-anchor"
+      className={`products section-anchor ${styles.section}`}
       aria-labelledby="products-title"
       tabIndex={-1}
     >

@@ -1,41 +1,43 @@
-@font-face {
-  font-family: "Kybo Barlow";
-  src: url("/fonts/Barlow-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Kybo Barlow Condensed";
-  src: url("/fonts/BarlowCondensed-ExtraBold.ttf") format("truetype");
-  font-weight: 800;
-  font-display: swap;
+.section {
+  padding-block: 32px 28px;
 }
 .container {
-  font-family: "Kybo Barlow", Arial, sans-serif;
+  font-family: var(--font-barlow), Arial, sans-serif;
   --rail-gap: 24px;
   width: min(100% - 48px, 1248px);
   margin-inline: auto;
 }
 .heading {
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 .heading h2 {
-  font-size: clamp(36px, 4.5vw, 64px);
+  font-family: var(--font-barlow-condensed), sans-serif;
+  font-size: clamp(50px, 5vw, 72px);
+  font-weight: 900;
+  line-height: 0.96;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  text-wrap: balance;
 }
 .heading h2 span {
-  color: #c65d00;
+  color: #d85b00;
 }
 .heading p {
   margin: 12px 0 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
 }
 .filters {
   display: flex;
   gap: 8px;
   overflow-x: auto;
-  padding: 4px 2px 12px;
-  margin: 0 -2px 12px;
-  scrollbar-width: thin;
-  scrollbar-color: var(--blue) transparent;
+  padding: 0;
+  margin: 0 0 20px;
+  scrollbar-width: none;
+}
+.filters::-webkit-scrollbar {
+  display: none;
 }
 .filters button {
   flex: 0 0 auto;
@@ -45,8 +47,9 @@
   border-radius: 999px;
   color: var(--blue);
   background: transparent;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
+  line-height: 20px;
   cursor: pointer;
 }
 .filters button[aria-pressed="true"] {
@@ -57,6 +60,10 @@
 }
 .filters button[aria-pressed="true"]:hover {
   background: var(--orange);
+}
+.filters button:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: -4px;
 }
 .carousel {
   position: relative;
@@ -81,6 +88,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 10px;
+  min-height: 485px;
   padding: 20px 24px;
   border: 1.5px solid var(--blue);
   border-radius: 16px;
@@ -93,7 +102,12 @@
   align-items: center;
   justify-content: center;
   min-height: 70px;
-  font-size: 30px;
+  font-family: var(--font-barlow-condensed), sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 35px;
+  letter-spacing: 0;
+  text-wrap: balance;
   width: 100%;
 }
 .visual {
@@ -104,15 +118,16 @@
 }
 .circle {
   position: absolute;
-  width: min(220px, 85%);
+  width: min(220px, 100%);
   aspect-ratio: 1;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  z-index: -1;
+  z-index: 0;
 }
 .visual img {
+  z-index: 1;
   object-fit: contain;
 }
 .card p {
@@ -120,14 +135,15 @@
   align-items: center;
   justify-content: center;
   min-height: 72px;
-  margin: 16px 0 0;
+  margin: 0;
+  font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
 }
 .previous,
 .next {
   position: absolute;
-  top: 50%;
+  top: 241px;
   transform: translateY(-50%);
   z-index: 1;
   display: grid;
@@ -158,18 +174,26 @@
   background: #ffdb9d;
 }
 .status {
-  margin: 24px 0 0;
+  margin: 20px 0 0;
   font-size: 14px;
+  font-weight: 500;
+  line-height: 17px;
 }
 .customization {
-  margin-top: 36px;
+  margin-top: 20px;
+  padding-top: 12px;
 }
 .customization h3 {
-  font-size: 26px;
+  font-family: var(--font-barlow-condensed), sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0;
 }
 .customization p {
-  margin: 8px 0 0;
+  margin: 6px 0 0;
   font-size: 16px;
+  line-height: 22px;
 }
 .srOnly {
   position: absolute;
@@ -183,31 +207,59 @@
   border: 0;
 }
 @media (min-width: 640px) {
+  .section {
+    padding-block: 48px 40px;
+  }
   .container {
     width: min(100% - 128px, 1248px);
+  }
+  .heading {
+    margin-bottom: 24px;
+  }
+  .heading p {
+    font-size: 18px;
+  }
+  .mobileBreak {
+    display: none;
+  }
+  .filters {
+    margin-bottom: 24px;
   }
   .card {
     flex-basis: calc((100% - var(--rail-gap)) / 2);
   }
   .previous {
-    left: -56px;
+    left: -64px;
+    width: 48px;
+    height: 48px;
   }
   .next {
-    right: -56px;
+    right: -64px;
+    width: 48px;
+    height: 48px;
+  }
+  .status {
+    margin-top: 24px;
+  }
+  .customization {
+    margin-top: 24px;
+  }
+  .customization h3 {
+    font-size: 26px;
+  }
+  .previous:focus-visible,
+  .next:focus-visible {
+    outline-offset: -5px;
   }
 }
 @media (min-width: 1024px) {
-  .container {
-    width: min(100% - 192px, 1248px);
-  }
   .card {
     flex-basis: calc((100% - var(--rail-gap) * 2) / 3);
   }
 }
-
-.heading h2,
-.card h3,
-.customization h3 {
-  font-family: "Kybo Barlow Condensed", var(--font-display), sans-serif;
-  font-weight: 800;
+@media (prefers-reduced-motion: reduce) {
+  .rail,
+  .filters {
+    scroll-behavior: auto;
+  }
 }

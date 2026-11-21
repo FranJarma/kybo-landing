@@ -5,7 +5,25 @@ colors:
   blue: "#013e5e"
   orange: "#ff8000"
   cream: "#fff0d4"
+  card: "#fffaf0"
 typography:
+  carousel-headline:
+    fontFamily: "var(--font-barlow-condensed), sans-serif"
+    fontSize: "clamp(50px, 5vw, 72px)"
+    fontWeight: 900
+    lineHeight: 0.96
+    letterSpacing: "0"
+  product-title:
+    fontFamily: "var(--font-barlow-condensed), sans-serif"
+    fontSize: "32px"
+    fontWeight: 700
+    lineHeight: "35px"
+    letterSpacing: "0"
+  product-copy:
+    fontFamily: "var(--font-barlow), Arial, sans-serif"
+    fontSize: "16px"
+    fontWeight: 400
+    lineHeight: "24px"
   display:
     fontFamily: "var(--font-barlow), Arial, Helvetica, sans-serif"
     fontSize: "clamp(48px, 6vw, 88px)"
@@ -155,13 +173,13 @@ Deep blue grounds the brand, warm cream opens breathing room, and vivid orange m
 - **Mobile navigation:** Use the frontmatter mobile-nav role for section links in the full-screen menu, with SemiBold (600) and `1.3` line height. The action keeps its separate Bold role.
 - **Footer statement:** ExtraBold (800), `clamp(42px, 5vw, 72px)/1.05`, with display tracking. Existing `13px` copyright and `14px` embed notes remain supporting metadata.
 
-**The One-Family Rule.** Use Barlow's real weights to distinguish display, product, navigation and reading roles. The logo remains the original image.
+**The Typography Roles Rule.** Barlow carries the existing landing's reading and interaction roles. The approved Figma carousel uses Barlow Condensed Black (900) for its uppercase heading and Bold (700) for product names and customization. Both families are registered once through `next/font/local`; the carousel reuses the existing Barlow weights rather than declaring another family. Condensed's two local WOFF2 files and OFL license live in `public/fonts/barlow-condensed/`. The logo remains the original image.
 
 ## Layout
 
 The shared centered container has a maximum width (`1320px`) and subtracts twice the page gutter from the viewport. Desktop sections use generous vertical spacing from the section token. The hero uses unequal shrinkable columns (`minmax(0, 1fr) minmax(0, 1.04fr)`) with a generous gap (`45px`), so its supplied illustration balances the copy without forcing symmetry. The artwork is limited to `560px` wide on desktop and keeps its complete `4/5` aspect ratio.
 
-Products form a horizontal snapping rail with three visible items on large screens, two at the medium breakpoint (`1000px`), and one generous partial-width item below `701px` (`84%`). The rail gap is the frontmatter token. Location and social content use unequal two-column grids, becoming single-column below `800px` to avoid cramped content on portrait tablets.
+Products use the approved Figma carousel: three complete cards from 1024px, two from 640px and one below 640px, within a maximum 1248px rail. Its gap remains 24px; the final page keeps the same complete-card count. Location and social content use unequal two-column grids, becoming single-column below `800px` to avoid cramped content on portrait tablets.
 
 Use content-driven breakpoints. Below `960px`, navigation opens as a full-viewport modal menu rather than a header dropdown; the header height changes from `90px` to `76px` through `--header-height`, and page gutters use `clamp(20px, 4.5vw, 40px)`. Its solid blue surface fills `100dvh`, scrolls independently in short viewports and keeps its own header sticky. Hero columns remain side by side on tablets, then stack below `640px`. On phones the artwork is limited to `280px` wide, with tighter copy spacing; the complete illustration remains visible in the page. Body type and section spacing change at `700px` (`16px` and `65px`). The menu-page heading uses its own phone size to prevent awkward wrapping.
 
@@ -175,7 +193,7 @@ Interface surfaces use no box shadows. Blue and cream fields, outlines, overlapp
 
 ## Shapes
 
-Art Deco stepped arches, retro waves and checkerboard geometry are the signature vocabulary within the supplied illustration. Repeated arched product-photo windows use large top corners (`180px 180px 16px 16px`), while the hours panel uses an outlined arch (`80px 80px 16px 16px`; mobile `65px 65px 16px 16px`). The illustration frame itself uses the panel radius from the frontmatter, preserving the complete artwork.
+Art Deco stepped arches, retro waves and checkerboard geometry are the signature vocabulary within the supplied illustration. The social-photo window uses large top corners (`180px 180px 16px 16px`), while the hours panel uses an outlined arch (`80px 80px 16px 16px`; mobile `65px 65px 16px 16px`). The illustration frame itself uses the panel radius from the frontmatter, preserving the complete artwork.
 
 Actions are pill-shaped, carousel controls are circular, and practical map, video and menu-preview frames use the restrained panel radius. Controlled asymmetry belongs in artwork and major compositions; controls retain clear alignment and familiar hit areas.
 
@@ -203,7 +221,11 @@ Opening focuses the X, and keyboard focus loops within the dialog. Escape or the
 
 ### Product Cards and Carousel
 
-Cards are editorial groupings without enclosing shadows or additional panels. Each has an arched original product photo, HWT Artz name and short Arial description. Keep the real product visible when choosing cover versus contain. Image hover enlarges gently (`scale(1.035)`, `0.35s`); carousel arrows use the outlined circular control token, orange hover fill and small lift (`translateY(-2px)`). The scrolling rail supports touch and keyboard focus; end controls are disabled appropriately.
+The current Figma page `113:666` is authoritative for this surface. Its 43 products belong to nine categories with counts 3/4/3/7/3/3/6/5/9. Cards use bone `#FFFAF0`, a 1.5px blue border and 16px corners. The order is name → complete transparent product over its ingredient-colored circle → description. Reserve 70px for the 32px/35px Condensed Bold title, 280px for the visual and 72px for 16px/24px Regular copy, with 10px gaps and 20px/24px block/inline padding. Minimum card height is 485px. Do not add image shadows, masks or blend modes: approved photographs already include their contact shadows. Use `object-fit: contain` and keep the 220px circle behind the photo, reducing it only when its container is narrower.
+
+The rail shows one complete card below 640px, two from 640–1023px and three from 1024px, including its last page. Its maximum width is 1248px. Page gutters are 24px on phones; wider layouts reserve 64px per side for lateral controls until the maximum width produces larger symmetric gutters. Gaps are 24px. Controls are 44px on phones and 48px on wider screens. Filter buttons use real Barlow SemiBold (600), 15px labels and a 44px minimum height; the selected filter is orange. Horizontal filter scrolling retains inset keyboard focus rings.
+
+Match Figma's section rhythm: 32px/28px top/bottom padding and 20px group gaps on phones; 48px/40px padding and 24px gaps on wider screens. The rail supports native touch scrolling, Left/Right and Home/End keys, accessible position announcements and disabled end controls. Changing category remounts the rail at its start. There is no automatic advance; reduced motion uses immediate navigation. Catalog data, cards, filters and navigation live in separate files. Four approved drink photos use content-versioned filenames to avoid stale optimized images; original files remain available.
 
 ### Hours and Media Panels
 
@@ -211,7 +233,7 @@ The hours panel is cream-outlined on blue, with the established arched silhouett
 
 ### Menu Previews
 
-Show the two original PDF pages (`public/images/menu/page-1.png` and `public/images/menu/page-2.png`) as full-width images with automatic height, preserving every page's proportions and contents. Stack them in a grid with the established rail gap and vertical margins (`32px`). Each linked preview uses the panel radius and opens the original PDF; hover adds a blue outline (`3px`) with a compact offset (`3px`). Keep the direct PDF open and download actions and the Fudo alternative alongside the previews.
+Show all nine pages of the current `public/menu.pdf` through full, uncropped WebP previews rendered directly from that document. Filenames include its SHA256 prefix to avoid stale optimized previews; preserve the previous image files. Use one column below 640px, two from 640px and three from 1024px, with 24px gaps. Each preview opens its corresponding PDF page. Keep the direct open/download actions and the Fudo alternative.
 
 ### Focus and Motion
 
@@ -221,7 +243,7 @@ All focus-visible controls use a solid current-color outline (`3px`) with an off
 
 ### Do:
 
-- **Do** use the normative palette and the local HWT Artz/Arial pairing.
+- **Do** use the normative palette and local Barlow/Barlow Condensed roles.
 - **Do** keep supplied artwork, original logos and real product photography in their established roles.
 - **Do** use broad color fields, rounded forms and controlled asymmetric compositions.
 - **Do** preserve visible current-color focus, mobile reflow and reduced-motion behavior.

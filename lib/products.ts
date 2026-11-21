@@ -54,7 +54,7 @@ export const products: readonly CarouselProduct[] = [
     name: "Bubble Sunrise",
     description: "Té chai, naranja y pulpa de frutos rojos. Elegí tus perlas.",
     category: "bubble-teas",
-    image: "/images/products/bubble-sunrise.webp",
+    image: "/images/products/bubble-sunrise-6f5c6cf82c.webp",
     color: "#ff8000",
   },
   {
@@ -126,7 +126,7 @@ export const products: readonly CarouselProduct[] = [
     name: "Kybo Tea",
     description: "Té chai con leche y perlas a elección.",
     category: "bubble-teas",
-    image: "/images/products/kybo-tea.webp",
+    image: "/images/products/kybo-tea-6a81292598.webp",
     color: "#f4d7a6",
   },
   {
@@ -134,7 +134,7 @@ export const products: readonly CarouselProduct[] = [
     name: "Blueberry Bubble",
     description: "Té chai, naranja y pulpa de maracuyá. Elegí tus perlas.",
     category: "bubble-teas",
-    image: "/images/products/blueberry-bubble.webp",
+    image: "/images/products/blueberry-bubble-4ac3f5266e.webp",
     color: "#ffb628",
   },
   {
@@ -190,7 +190,7 @@ export const products: readonly CarouselProduct[] = [
     name: "Coffee Iced Latte",
     description: "Café con leche bien frío, perlas y salsa a elección.",
     category: "lattes",
-    image: "/images/products/coffee-iced-latte.webp",
+    image: "/images/products/coffee-iced-latte-78af4b2fc0.webp",
     color: "#e8be8f",
   },
   {

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-20T19:30:09.760Z",
+  "generatedAt": "2026-11-21T04:17:37.923692+00:00",
   "title": "Design System: Kybo",
   "extensions": {
     "colorMeta": {
@@ -78,6 +78,18 @@
       "action": {
         "displayName": "Action",
         "purpose": "Barlow Bold (700) button labels."
+      },
+      "carousel-headline": {
+        "displayName": "Carousel headline",
+        "purpose": "Barlow Condensed Black900,72px desktop/50px phone,0.96 line-height,uppercase; current Figma page113:666."
+      },
+      "product-title": {
+        "displayName": "Product title",
+        "purpose": "Barlow Condensed Bold700,32px/35px; reserve70px. Real weights from --font-barlow-condensed, locally loaded once."
+      },
+      "product-copy": {
+        "displayName": "Product copy",
+        "purpose": "Barlow Regular400,16px/24px; reserve72px. Reuses existing local family."
       }
     },
     "shadows": [],
@@ -235,8 +247,8 @@
         "section": "colors"
       },
       {
-        "name": "The One-Family Rule",
-        "body": "Use Barlow's real weights to distinguish display, product, navigation and reading roles. The logo remains the original image.",
+        "name": "The Typography Roles Rule",
+        "body": "Use Barlow for reading and controls, and the approved Barlow Condensed Black/Bold roles within the product carousel. Preserve the original logo.",
         "section": "typography"
       },
       {
@@ -246,7 +258,7 @@
       }
     ],
     "dos": [
-      "Do use the normative palette and local Barlow weights 400, 500, 600, 700 and 800.",
+      "Do use the normative palette and the local Barlow/Barlow Condensed roles.",
       "Do keep supplied artwork, original logos and real product photography in their established roles.",
       "Do use broad color fields, rounded forms and controlled asymmetric compositions.",
       "Do preserve visible current-color focus, mobile reflow and reduced-motion behavior.",

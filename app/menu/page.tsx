@@ -37,21 +37,21 @@ export default function MenuPage() {
             Descargar menú <Download size={20} />
           </a>
         </div>
-        <div className="menu-preview" aria-label="Vista previa de las dos páginas del menú">
-          {[1, 2].map(page => (
+        <div className="menu-preview" aria-label="Vista previa de las nueve páginas del menú">
+          {Array.from({ length: 9 }, (_, index) => index + 1).map(page => (
             <a
-              href="/menu.pdf"
+              href={`/menu.pdf#page=${page}`}
               target="_blank"
               rel="noopener noreferrer"
               key={page}
               aria-label={`Abrir página ${page} del menú en PDF para ampliar`}
             >
               <Image
-                src={`/images/menu/page-${page}.png`}
+                src={`/images/menu/menu-950b5e4576-page-${page}.webp`}
                 alt={`Página ${page} del menú de Kybo; abrí el PDF para ampliar o consultá la alternativa en Fudo`}
-                width={1600}
-                height={1132}
-                sizes="(max-width:700px) 100vw, 1300px"
+                width={840}
+                height={1190}
+                sizes="(max-width:639px) 100vw, (max-width:1023px) 50vw, 33vw"
               />
             </a>
           ))}
