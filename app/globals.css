@@ -263,68 +263,6 @@ section[id] {
   max-width: 580px;
   margin-bottom: 0;
 }
-.carousel-controls {
-  display: flex;
-  gap: 12px;
-  flex-shrink: 0;
-}
-.round-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 52px;
-  height: 52px;
-  border: 2px solid var(--blue);
-  border-radius: 50%;
-  background: transparent;
-  color: var(--blue);
-  transition:
-    background 0.2s,
-    transform 0.2s;
-}
-.round-button:not(:disabled):hover {
-  background: var(--orange);
-  transform: translateY(-2px);
-}
-.product-rail {
-  display: flex;
-  gap: 24px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding: 4px 4px 25px;
-  margin: 0 -4px;
-  list-style: none;
-  scrollbar-width: thin;
-  scrollbar-color: var(--blue) transparent;
-}
-.product-card {
-  flex: 0 0 calc((100% - 48px) / 3);
-  scroll-snap-align: start;
-  min-width: 0;
-}
-.product-photo {
-  position: relative;
-  aspect-ratio: 1/1.13;
-  overflow: hidden;
-  background: #fff;
-  border-radius: 180px 180px 16px 16px;
-}
-.product-photo img {
-  object-fit: contain;
-  transition: transform 0.35s;
-}
-.product-card:hover img {
-  transform: scale(1.035);
-}
-.product-card h3 {
-  margin-top: 24px;
-  font-size: 30px;
-}
-.product-card p {
-  margin: 12px 0 0;
-  font-size: 16px;
-  max-width: 32ch;
-}
 .menu-banner {
   background: var(--orange);
   padding: 38px 0;
@@ -533,9 +471,6 @@ section[id] {
   .location-grid {
     gap: 40px;
   }
-  .product-card {
-    flex-basis: calc((100% - 24px) / 2);
-  }
   .social-grid {
     gap: 24px;
   }
@@ -565,18 +500,6 @@ section[id] {
     align-items: flex-start;
     flex-direction: column;
     margin-bottom: 28px;
-  }
-  .carousel-controls {
-    align-self: flex-end;
-  }
-  .product-card {
-    flex-basis: 84%;
-  }
-  .product-card h3 {
-    font-size: 28px;
-  }
-  .product-photo {
-    aspect-ratio: 1/1.1;
   }
   .menu-banner-inner {
     align-items: flex-start;
@@ -644,9 +567,6 @@ section[id] {
 }
 .video-panel {
   min-width: 0;
-}
-.product-card:not(:nth-child(6)) .product-photo img {
-  object-fit: cover;
 }
 @keyframes art-arrive {
   from {
