@@ -2,7 +2,6 @@ type FudoType = "Customer";
 
 export type CustomerFudoRequest = {
   data: {
-    type: FudoType;
     attributes: {
       active: boolean;
       comment: string;
@@ -10,15 +9,16 @@ export type CustomerFudoRequest = {
       email: string;
       name: string;
     };
+    type: FudoType;
   };
 };
 
 export type FudoCustomerResponse = {
   data: {
-    type: "Customer";
-    id: string;
     attributes: Customer;
-    relationships: Record<string, any>;
+    id: string;
+    relationships: Record<string, unknown>;
+    type: "Customer";
   }[];
 };
 

@@ -6,6 +6,9 @@ import sortDestructureKeys from "eslint-plugin-sort-destructure-keys";
 import typescriptSortKeys from "eslint-plugin-typescript-sort-keys";
 
 export default [
+  {
+    ignores: [".impeccable/**", ".taste-skill/**", "next-env.d.ts"],
+  },
   js.configs.recommended,
   ...tseslint.configs.recommended,
   {
@@ -28,7 +31,7 @@ export default [
       "typescript-sort-keys": typescriptSortKeys,
     },
     rules: {
-      "prettier/prettier": "error",
+      "prettier/prettier": ["error", { endOfLine: "auto" }],
 
       "simple-import-sort/imports": "warn",
       "simple-import-sort/exports": "warn",
