@@ -1,16 +1,7 @@
 "use client";
 
 import * as Dialog from "@radix-ui/react-dialog";
-import {
-  ArrowLeft,
-  ArrowRight,
-  Download,
-  Expand,
-  ExternalLink,
-  Minimize,
-  X,
-  ZoomIn,
-} from "lucide-react";
+import { ArrowLeft, ArrowRight, Download, Expand, Minimize, X, ZoomIn } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
@@ -42,7 +33,6 @@ export function MenuBook() {
   const last = spread[spread.length - 1];
   const range = first === last ? `${first + 1}` : `${first + 1}–${last + 1}`;
   const pdfUrl = `/menu.pdf?v=${menu.version}`;
-  const pdfSize = Math.round(menu.byteSize / 1024 / 1024);
   const send = (command: BookCommand) =>
     frame.current?.contentWindow?.postMessage(command, window.location.origin);
 
@@ -180,34 +170,20 @@ export function MenuBook() {
   return (
     <div ref={root} tabIndex={-1} className={styles.reader}>
       <header className={styles.toolbar}>
+        <h1 className={styles.srOnly}>Menú</h1>
         <Link href="/" className={styles.back} aria-label="Volver al inicio de Kybo">
-          <ArrowLeft size={20} aria-hidden="true" />
           <Image src="/images/logo1.webp" alt="Kybo" width={100} height={43} priority />
         </Link>
-        <h1>El menú de Kybo</h1>
         <div className={styles.tools}>
           <a
             href={pdfUrl}
             download="menu.pdf"
             className={styles.tool}
-            aria-label={`Descargar el menú original en PDF, ${pdfSize} MB`}
-            title={`Descargar PDF · ${pdfSize} MB`}
+            aria-label="Descargar el menú en PDF"
+            title="Descargar PDF"
           >
             <Download size={20} aria-hidden="true" />
-            <span>
-              PDF <small>{pdfSize} MB</small>
-            </span>
-          </a>
-          <a
-            href="https://menu.fu.do/kybo"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.tool}
-            aria-label="Consultar el menú en Fudo"
-            title="Menú en Fudo"
-          >
-            <ExternalLink size={20} aria-hidden="true" />
-            <span>Fudo</span>
+            <span>PDF</span>
           </a>
           {canFullscreen && (
             <button
@@ -285,7 +261,7 @@ export function MenuBook() {
         </div>
         <button
           type="button"
-          className={`${styles.arrow} ${styles.next}`}
+          className={styles.arrow}
           onClick={() => move("next")}
           disabled={last === menu.pageCount - 1 || (!ready && !failed)}
           aria-disabled={last === menu.pageCount - 1 || turning || (!ready && !failed)}

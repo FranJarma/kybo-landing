@@ -17,11 +17,6 @@
   background: var(--blue);
   color: var(--cream);
 }
-.toolbar h1 {
-  font-size: 22px;
-  font-weight: 600;
-  letter-spacing: 0;
-}
 .back,
 .tools,
 .tool {
@@ -52,11 +47,6 @@
 .tool span {
   font-size: 15px;
   font-weight: 600;
-}
-.tool small {
-  font-size: 12px;
-  font-weight: 400;
-  margin-left: 4px;
 }
 .tool:hover {
   background: rgb(255 240 212 / 12%);
@@ -102,12 +92,11 @@
   background: transparent;
   cursor: pointer;
 }
-.next {
-  background: var(--orange);
-}
-.arrow:not(:disabled):hover,
-.zoomButton:hover {
-  background: var(--orange);
+@media (hover: hover) and (pointer: fine) {
+  .arrow:not(:disabled):not([aria-disabled="true"]):hover,
+  .zoomButton:hover {
+    background: var(--orange);
+  }
 }
 .arrow:disabled,
 .arrow[aria-disabled="true"] {
@@ -251,14 +240,6 @@
   .toolbar {
     min-height: 60px;
     gap: 8px;
-  }
-  .toolbar h1 {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip-path: inset(50%);
-    white-space: nowrap;
   }
   .tool span {
     display: none;
