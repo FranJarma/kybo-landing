@@ -1,7 +1,7 @@
 import { ArrowDown, ArrowUpRight } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 
+import { HeroVideo } from "@/components/hero-video";
 import { landingSections } from "@/lib/navigation";
 export function Hero() {
   return (
@@ -28,16 +28,7 @@ export function Hero() {
             Nos vemos en Alberdi 143, Salta <ArrowUpRight size={18} />
           </a>
         </div>
-        <div className="hero-art hero-art-reference">
-          <Image
-            src="/images/kybo-art.webp"
-            alt="Ilustración de Kybo: bubble tea, waffle y helado con volumen satinado, ondas naranjas, arco escalonado y damero azul y crema"
-            fill
-            priority
-            sizes="(max-width:700px) 100vw, 600px"
-            className="hero-reference-image"
-          />
-        </div>
+        <HeroVideo />
       </div>
       <svg
         className="section-wave"

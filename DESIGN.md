@@ -5,30 +5,68 @@ colors:
   blue: "#013e5e"
   orange: "#ff8000"
   cream: "#fff0d4"
+  card: "#fffaf0"
 typography:
+  carousel-headline:
+    fontFamily: "var(--font-barlow-condensed), sans-serif"
+    fontSize: "clamp(50px, 5vw, 72px)"
+    fontWeight: 900
+    lineHeight: 0.96
+    letterSpacing: "0"
+  product-title:
+    fontFamily: "var(--font-barlow-condensed), sans-serif"
+    fontSize: "32px"
+    fontWeight: 700
+    lineHeight: "35px"
+    letterSpacing: "0"
+  product-copy:
+    fontFamily: "var(--font-barlow), Arial, sans-serif"
+    fontSize: "16px"
+    fontWeight: 400
+    lineHeight: "24px"
   display:
-    fontFamily: "var(--font-display), sans-serif"
-    fontSize: "clamp(48px, 6.5vw, 96px)"
-    fontWeight: 400
+    fontFamily: "var(--font-barlow), Arial, Helvetica, sans-serif"
+    fontSize: "clamp(48px, 6vw, 88px)"
+    fontWeight: 800
     lineHeight: 1.04
+    letterSpacing: "-0.025em"
   headline:
-    fontFamily: "var(--font-display), sans-serif"
+    fontFamily: "var(--font-barlow), Arial, Helvetica, sans-serif"
     fontSize: "clamp(36px, 4.5vw, 64px)"
-    fontWeight: 400
+    fontWeight: 800
     lineHeight: 1.04
+    letterSpacing: "-0.025em"
   title:
-    fontFamily: "var(--font-display), sans-serif"
+    fontFamily: "var(--font-barlow), Arial, Helvetica, sans-serif"
     fontSize: "clamp(26px, 2.5vw, 34px)"
-    fontWeight: 400
-    lineHeight: 1.04
+    fontWeight: 700
+    lineHeight: 1.15
+    letterSpacing: "-0.015em"
   body:
-    fontFamily: "Arial, Helvetica, sans-serif"
+    fontFamily: "var(--font-barlow), Arial, Helvetica, sans-serif"
     fontSize: "17px"
+    fontWeight: 400
+    lineHeight: 1.6
+  lead:
+    fontFamily: "var(--font-barlow), Arial, Helvetica, sans-serif"
+    fontSize: "20px"
+    fontWeight: 500
+    lineHeight: 1.5
+  navigation:
+    fontFamily: "var(--font-barlow), Arial, Helvetica, sans-serif"
+    fontSize: "17px"
+    fontWeight: 600
+    lineHeight: 1.6
+  action:
+    fontFamily: "var(--font-barlow), Arial, Helvetica, sans-serif"
+    fontSize: "17px"
+    fontWeight: 700
     lineHeight: 1.6
   mobile-nav:
-    fontFamily: "Arial, Helvetica, sans-serif"
+    fontFamily: "var(--font-barlow), Arial, Helvetica, sans-serif"
     fontSize: "clamp(24px, 5vw, 32px)"
-    lineHeight: 1.6
+    fontWeight: 600
+    lineHeight: 1.3
 rounded:
   action: "100px"
   panel: "16px"
@@ -85,7 +123,7 @@ components:
 
 Kybo combines Art Deco stepped arches, retro curves and strong rounded lettering with the satin volumes of Plastic Art. Large blue and cream fields create a calm structure around an expressive, youthful food brand. Controlled asymmetry and playful anti-art references give the imagery its character while the reading order stays clear.
 
-The supplied illustration (`public/images/kybo-art.webp`) anchors this world. Its sculptural food forms, orange curves, stepped arch and checkerboard are illustration, not evidence of a product for sale. Real products use Kybo's own photographs; original logos remain untouched. The visual system documents the implemented stylesheet, with the user's explicit brief supplying its descriptive language.
+The supplied illustration (`public/images/kybo-art.webp`) established this world and remains an available reference asset. The hero now uses the user's supplied portrait film (`public/videos/hero-95097ceb55.mp4`), with a still drawn from that same video. Its orange field, floating pearls and sculptural drink extend the brand's expressive material. Real product cards use Kybo's own photographs; original logos remain untouched. The visual system documents the implemented stylesheet, with the user's explicit brief supplying its descriptive language.
 
 **Key Characteristics:**
 
@@ -115,42 +153,47 @@ Deep blue grounds the brand, warm cream opens breathing room, and vivid orange m
 
 ## Typography
 
-**Display Font:** Local HWT Artz (`public/fonts/hwt_artz.otf`), loaded through Next.js as `--font-display`, with sans-serif fallback.
+**Family:** Local Barlow (`public/fonts/barlow/`), loaded through Next.js as `--font-barlow`. It also supplies Tailwind's sans family. Arial and Helvetica are loading fallbacks, with Next.js adjusting fallback metrics.
 
-**Body Font:** Arial, Helvetica, sans-serif.
+**Menu reference:** The supplied PDF embeds Barlow ExtraBold (800) for category headings and Barlow Bold (700) for product names. Its large “menú!” word uses a different display face; the requested website treatment uses Barlow throughout the interface and keeps the original logo image.
 
-**Character:** Heavy-looking, rounded retro display forms create the voice at normal font weight. Straightforward body type keeps descriptions, addresses, navigation and practical information readable.
+**Character:** ExtraBold headings and Bold product names carry the menu's confident voice. Regular descriptions, Medium introductions and SemiBold navigation create contrast within one family. Keep the source copy's capitalization and the existing left alignment on phones.
+
+**Delivery:** Five unmodified WOFF2 Latin subsets (400, 500, 600, 700 and 800), about 110 KiB total, are served locally with `font-display: swap`. Spanish accents and punctuation are included. The OFL license and source details live beside the fonts; there is no runtime Google Fonts request.
 
 ### Hierarchy
 
 - **Display:** The frontmatter display role is the desktop h1. The phone hero uses its own fluid size (`clamp(40px, 10.5vw, 64px)`), with a separate tablet size (`clamp(40px, 6vw, 64px)`).
 - **Headline:** The frontmatter headline role is h2. Short lines and balanced wrapping suit section entrances.
-- **Title:** The frontmatter title role is h3. Product names use a local size (`30px`, then `28px` on mobile).
-- **Body:** The frontmatter body role is the desktop baseline. Mobile body copy becomes smaller (`16px`), paragraphs stay within a readable measure (`64ch`), and hero copy uses a larger size (`20px`, then `18px` on mobile).
-- **Action labels:** Inherit body type and use bold weight (`700`); avoid introducing a separate decorative label font.
-- **Mobile navigation:** Use the frontmatter mobile-nav role for section links in the full-screen menu. Its larger Arial labels distinguish destination choices from the unchanged action-label typography.
+- **Title:** The frontmatter title role is h3, using Bold (700) with more leading than display titles. Product names use a local size (`30px`, then `28px` on mobile).
+- **Body:** Regular (400) is the desktop baseline. Mobile body copy becomes smaller (`16px`), and paragraphs stay within a readable measure (`64ch`).
+- **Introductions:** Medium (500), `20px/1.5` on desktop; hero copy becomes `18px` on smaller screens. The menu-page introduction shares this role.
+- **Navigation and links:** SemiBold (600). Hero secondary links and the address use `16px`; the location-section address uses `24px`, then `21px` on mobile.
+- **Action labels:** Bold (700), inherited size; keep the current button heights and spacing.
+- **Mobile navigation:** Use the frontmatter mobile-nav role for section links in the full-screen menu, with SemiBold (600) and `1.3` line height. The action keeps its separate Bold role.
+- **Footer statement:** ExtraBold (800), `clamp(42px, 5vw, 72px)/1.05`, with display tracking. Existing `13px` copyright and `14px` embed notes remain supporting metadata.
 
-**The Two-Voice Rule.** Use HWT Artz for short expressive headings and Arial for information and interaction. Do not redraw the logo as display text.
+**The Typography Roles Rule.** Barlow carries the existing landing's reading and interaction roles. The approved Figma carousel uses Barlow Condensed Black (900) for its uppercase heading and Bold (700) for product names and customization. Both families are registered once through `next/font/local`; the carousel reuses the existing Barlow weights rather than declaring another family. Condensed's two local WOFF2 files and OFL license live in `public/fonts/barlow-condensed/`. The logo remains the original image.
 
 ## Layout
 
-The shared centered container has a maximum width (`1320px`) and subtracts twice the page gutter from the viewport. Desktop sections use generous vertical spacing from the section token. The hero uses unequal shrinkable columns (`minmax(0, 1fr) minmax(0, 1.04fr)`) with a generous gap (`45px`), so its supplied illustration balances the copy without forcing symmetry. The artwork is limited to `560px` wide on desktop and keeps its complete `4/5` aspect ratio.
+The shared centered container has a maximum width (`1320px`) and subtracts twice the page gutter from the viewport. Desktop sections use generous vertical spacing from the section token. The hero uses unequal shrinkable columns (`minmax(0, 1fr) minmax(0, 1.04fr)`) with a generous gap (`45px`), so its portrait video balances the copy without forcing symmetry. The film is limited to `380px` wide on desktop and keeps its complete `9/16` aspect ratio inside an arched window (`144px 144px 20px 20px`). Keep the copy and actions on the blue field.
 
-Products form a horizontal snapping rail with three visible items on large screens, two at the medium breakpoint (`1000px`), and one generous partial-width item below `701px` (`84%`). The rail gap is the frontmatter token. Location and social content use unequal two-column grids, becoming single-column below `800px` to avoid cramped content on portrait tablets.
+Products use the approved Figma carousel: three complete cards from 1024px, two from 640px and one below 640px, within a maximum 1248px rail. Its gap remains 24px; the final page keeps the same complete-card count. Location and social content use unequal two-column grids, becoming single-column below `800px` to avoid cramped content on portrait tablets.
 
-Use content-driven breakpoints. Below `960px`, navigation opens as a full-viewport modal menu rather than a header dropdown; the header height changes from `90px` to `76px` through `--header-height`, and page gutters use `clamp(20px, 4.5vw, 40px)`. Its solid blue surface fills `100dvh`, scrolls independently in short viewports and keeps its own header sticky. Hero columns remain side by side on tablets, then stack below `640px`. On phones the artwork is limited to `280px` wide, with tighter copy spacing; the complete illustration remains visible in the page. Body type and section spacing change at `700px` (`16px` and `65px`). The menu-page heading uses its own phone size to prevent awkward wrapping.
+Use content-driven breakpoints. Below `960px`, navigation opens as a full-viewport modal menu rather than a header dropdown; the header height changes from `90px` to `76px` through `--header-height`, and page gutters use `clamp(20px, 4.5vw, 40px)`. Its solid blue surface fills `100dvh`, scrolls independently in short viewports and keeps its own header sticky. Hero columns remain side by side on tablets, then stack below `640px`. On phones the video follows the message and actions, is limited to `320px` wide and keeps its complete portrait proportions with `120px` upper corners. Body type and section spacing change at `700px` (`16px` and `65px`).
 
 Alternate broad blue and cream sections, with the orange menu band acting as a compact interruption. Keep enough space for rounded display forms and actual product silhouettes to remain legible.
 
 ## Elevation & Depth
 
-Interface surfaces use no box shadows. Blue and cream fields, outlines, overlapping geometry and imagery establish hierarchy. Plastic Art depth belongs to the supplied illustration's satin volumes; it does not imply glossy or raised controls. Existing action hover movement is small (`translateY(-3px)`) and active feedback is brief (`scale(0.97)`).
+Interface controls use no box shadows. Blue and cream fields, outlines, overlapping geometry and imagery establish hierarchy. Plastic Art depth belongs to the supplied illustration's satin volumes; it does not imply glossy or raised controls. The menu book is the specific exception: paper curvature and restrained shadows communicate a physical page turn. Existing action hover movement is small (`translateY(-3px)`) and active feedback is brief (`scale(0.97)`).
 
 **The Illustrated-Depth Rule.** Let the artwork carry sculptural volume; keep buttons and panels flat in material.
 
 ## Shapes
 
-Art Deco stepped arches, retro waves and checkerboard geometry are the signature vocabulary within the supplied illustration. Repeated arched product-photo windows use large top corners (`180px 180px 16px 16px`), while the hours panel uses an outlined arch (`80px 80px 16px 16px`; mobile `65px 65px 16px 16px`). The illustration frame itself uses the panel radius from the frontmatter, preserving the complete artwork.
+Art Deco stepped arches, retro waves and checkerboard geometry are the signature vocabulary within the supplied illustration. The social-photo window uses large top corners (`180px 180px 16px 16px`), while the hours panel uses an outlined arch (`80px 80px 16px 16px`; mobile `65px 65px 16px 16px`). The illustration frame itself uses the panel radius from the frontmatter, preserving the complete artwork.
 
 Actions are pill-shaped, carousel controls are circular, and practical map, video and menu-preview frames use the restrained panel radius. Controlled asymmetry belongs in artwork and major compositions; controls retain clear alignment and familiar hit areas.
 
@@ -178,25 +221,33 @@ Opening focuses the X, and keyboard focus loops within the dialog. Escape or the
 
 ### Product Cards and Carousel
 
-Cards are editorial groupings without enclosing shadows or additional panels. Each has an arched original product photo, HWT Artz name and short Arial description. Keep the real product visible when choosing cover versus contain. Image hover enlarges gently (`scale(1.035)`, `0.35s`); carousel arrows use the outlined circular control token, orange hover fill and small lift (`translateY(-2px)`). The scrolling rail supports touch and keyboard focus; end controls are disabled appropriately.
+The current Figma page `113:666` is authoritative for this surface. Its 43 products belong to nine categories with counts 3/4/3/7/3/3/6/5/9. Cards use bone `#FFFAF0`, a 1.5px blue border and 16px corners. The order is name → complete transparent product over its ingredient-colored circle → description. Reserve 70px for the 32px/35px Condensed Bold title, 280px for the visual and 72px for 16px/24px Regular copy, with 10px gaps and 20px/24px block/inline padding. Minimum card height is 485px. Do not add image shadows, masks or blend modes: approved photographs already include their contact shadows. Use `object-fit: contain` and keep the 220px circle behind the photo, reducing it only when its container is narrower.
+
+The rail shows one complete card below 640px, two from 640–1023px and three from 1024px, including its last page. Its maximum width is 1248px. Page gutters are 24px on phones; wider layouts reserve 64px per side for lateral controls until the maximum width produces larger symmetric gutters. Gaps are 24px. Controls are 44px on phones and 48px on wider screens. Navigation arrows rest on cream with blue outlines and turn orange only on enabled fine-pointer hover; touch does not retain an orange hover state. Filter buttons use real Barlow SemiBold (600), 15px labels and a 44px minimum height; the selected filter is orange. Horizontal filter scrolling retains inset keyboard focus rings.
+
+On fine-pointer hover, the photograph scales to `1.045` over `350ms` and returns on exit; the card and circle retain their dimensions. A rounded SVG outline traces clockwise over `750ms` using the product's existing ingredient-circle color. The outline fades on exit. Reduced motion removes scaling and transitions, leaving immediate color feedback. Touch scrolling retains its existing behavior.
+
+Match Figma's section rhythm: 32px/28px top/bottom padding and 20px group gaps on phones; 48px/40px padding and 24px gaps on wider screens. The rail supports native touch scrolling, Left/Right and Home/End keys, accessible position announcements and disabled end controls. Changing category remounts the rail at its start. There is no automatic advance; reduced motion uses immediate navigation. Catalog data, cards, filters and navigation live in separate files. Four approved drink photos use content-versioned filenames to avoid stale optimized images; original files remain available.
 
 ### Hours and Media Panels
 
 The hours panel is cream-outlined on blue, with the established arched silhouette and frontmatter padding; mobile padding reduces to `26px`. Times use tabular numerals and right alignment. Media panels use flat blue surfaces, cream text and the panel radius. Load external video only after the existing explicit load action, preserving the fallback destination link.
 
-### Menu Previews
+### Menu Book
 
-Show the two original PDF pages (`public/images/menu/page-1.png` and `public/images/menu/page-2.png`) as full-width images with automatic height, preserving every page's proportions and contents. Stack them in a grid with the established rail gap and vertical margins (`32px`). Each linked preview uses the panel radius and opens the original PDF; hover adds a blue outline (`3px`) with a compact offset (`3px`). Keep the direct PDF open and download actions and the Fudo alternative alongside the previews.
+`/menu` fills `100dvh` with a compact blue toolbar, a cream reading area and persistent page controls. It uses the current supplied `public/menu.pdf` unchanged, with all nine pages rendered directly into uncropped, versioned WebP images. Reader images total about 2 MB; the original PDF is fetched only through its explicit download action. The toolbar contains the original logo linking home, PDF download and optional fullscreen. Per the user's simplification, omit the Fudo shortcut, visible title, file-size label and separate back arrow. Keep a screen-reader heading and descriptive control labels. Page arrows rest on cream with blue outlines and turn orange only on enabled fine-pointer hover, matching the carousel.
+
+Fit complete pages within the available reading area: two open pages when its width reaches 800px, otherwise one. A route-specific HTML page-flip engine provides soft paper curvature and changing shadows over about `650ms`. Its isolated same-origin frame disposes the engine's animation loop on resize and unmount. Buttons, horizontal touch swipes, Left/Right and Home/End navigate; a select jumps to a spread and zoom opens an accessible, scrollable high-resolution page dialog. Fullscreen is available where the browser supports it. Reduced motion uses immediate page changes without decorative folds. If the effect fails, the static-page fallback retains navigation, zoom and PDF access. Actual extracted PDF text remains available to assistive technology.
 
 ### Focus and Motion
 
-All focus-visible controls use a solid current-color outline (`3px`) with an offset (`6px`). Preserve the skip link. Current color ensures the ring remains visible on both blue and cream fields. The art entrance runs once (`0.8s`, `cubic-bezier(0.16, 1, 0.3, 1)`) and the rail may scroll smoothly. Under `prefers-reduced-motion: reduce`, disable CSS animations and transitions, use automatic page scrolling and immediate carousel movement.
+All focus-visible controls use a solid current-color outline (`3px`) with an offset (`6px`). Preserve the skip link. Current color ensures the ring remains visible on both blue and cream fields. The supplied 10-second hero video is the opening focal motion: muted, inline and looped, with a neutral 44px pause/play control. Load and play only while visible; stop when offscreen or the tab is hidden, and preserve explicit pause. Reduced motion and data saving show the still poster until explicit playback. Keep that poster if the video cannot play. Under `prefers-reduced-motion: reduce`, disable CSS animations and transitions, use automatic page scrolling and immediate carousel movement.
 
 ## Do's and Don'ts
 
 ### Do:
 
-- **Do** use the normative palette and the local HWT Artz/Arial pairing.
+- **Do** use the normative palette and local Barlow/Barlow Condensed roles.
 - **Do** keep supplied artwork, original logos and real product photography in their established roles.
 - **Do** use broad color fields, rounded forms and controlled asymmetric compositions.
 - **Do** preserve visible current-color focus, mobile reflow and reduced-motion behavior.
