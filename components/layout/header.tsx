@@ -52,6 +52,7 @@ export function Header() {
             <Dialog.Overlay className="mobile-menu-overlay" />
             <Dialog.Content
               className="mobile-menu-panel"
+              data-lenis-prevent
               aria-modal="true"
               aria-describedby={undefined}
               onOpenAutoFocus={event => {

@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "lenis/dist/lenis.css";
 @theme {
   --color-kybo-blue: #013e5e;
   --color-kybo-orange: #ff8000;

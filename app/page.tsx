@@ -3,10 +3,12 @@ import Link from "next/link";
 
 import { Footer, Header } from "@/components/layout";
 import { AboutUs, Hero, OurProducts, SocialMedia } from "@/components/sections";
+import { SmoothScroll } from "@/components/smooth-scroll";
 export const dynamic = "force-static";
 export default function LandingPage() {
   return (
     <>
+      <SmoothScroll />
       <Header />
       <main id="main-content" tabIndex={-1}>
         <Hero />
