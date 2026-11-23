@@ -9,6 +9,6 @@ Next.js 15, React 19, Tailwind 4. Conservar logo original, enlaces comerciales, 
 ## Brand Commitments
 Personalidad juvenil, gastronómica, divertida y expresiva. Paleta y recursos retro definidos en el pedido del usuario.
 ## Evidence on Hand
-Nueve fotos aportadas desde D:/Emprendimientos/Kybo/foto producto 2. Logos y Mona Lisa existentes en public/images. Menú actual en https://menu.fu.do/kybo. PDF vigente recibido y publicado en public/menu.pdf. Ilustración adjunta en public/images/kybo-art.webp. Enlaces de publicaciones concretas pendientes.
+Nueve fotos aportadas desde D:/Emprendimientos/Kybo/foto producto 2. Logos y Mona Lisa existentes en public/images. Carta vigente aportada como D:/Emprendimientos/Kybo/kybo-carta-actualizada.pdf y publicada en public/menu.pdf, con nueve hojas optimizadas en el libro. Video del hero aportado como C:/Users/franj/Downloads/hero-video.mp4 y conservado en public/videos/hero-95097ceb55.mp4; su poster sale del mismo archivo. Ilustración original disponible en public/images/kybo-art.webp. Enlaces de publicaciones concretas pendientes.
 ## Accessibility & Inclusion
 Navegación de teclado, foco visible, imágenes sin cortes importantes, diseño responsive y movimiento reducido.

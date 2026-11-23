@@ -588,16 +588,6 @@ section[id] {
 .video-panel {
   min-width: 0;
 }
-@keyframes art-arrive {
-  from {
-    opacity: 0.6;
-    transform: translateY(16px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 :focus-visible {
   outline-color: currentColor;
 }
@@ -723,21 +713,46 @@ section[id] {
 .hero-location:hover {
   text-decoration: underline;
 }
-.hero-art {
+.hero-media {
   position: relative;
   min-width: 0;
-}
-.hero-art-reference {
   width: 100%;
-  max-width: 560px;
-  aspect-ratio: 4/5;
-  justify-self: end;
+  max-width: 380px;
+  aspect-ratio: 9/16;
+  justify-self: center;
   overflow: hidden;
-  border-radius: 16px;
-  animation: art-arrive 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  border-radius: 144px 144px 20px 20px;
 }
-.hero-reference-image {
+.hero-video-poster,
+.hero-video {
+  display: block;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
+}
+.hero-video {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.hero-video-toggle {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1.5px solid var(--blue);
+  border-radius: 50%;
+  color: var(--blue);
+  background: var(--cream);
+  cursor: pointer;
+}
+@media (hover: hover) and (pointer: fine) {
+  .hero-video-toggle:hover {
+    background: var(--orange);
+  }
 }
 @media (max-width: 1000px) {
   .hero-grid {
@@ -751,9 +766,6 @@ section[id] {
   .hero-copy > p {
     font-size: 18px;
     margin: 20px 0 24px;
-  }
-  .hero-art-reference {
-    max-width: 480px;
   }
 }
 @media (max-width: 959px) {
@@ -810,9 +822,10 @@ section[id] {
   .hero-location {
     margin-top: 8px;
   }
-  .hero-art-reference {
-    max-width: 280px;
+  .hero-media {
+    max-width: 320px;
     margin: 0 auto;
+    border-radius: 120px 120px 20px 20px;
   }
   .menu-page h1 {
     font-size: clamp(36px, 9.5vw, 60px);
