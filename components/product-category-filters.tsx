@@ -17,7 +17,12 @@ export function ProductCategoryFilters({
 }) {
   const categories = [{ id: "all" as const, label: "Todos" }, ...productCategories];
   return (
-    <div className={styles.filters} role="group" aria-label="Filtrar productos por categoría">
+    <div
+      className={styles.filters}
+      role="group"
+      aria-label="Filtrar productos por categoría"
+      data-lenis-prevent-horizontal
+    >
       {categories.map(category => (
         <button
           key={category.id}

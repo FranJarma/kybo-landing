@@ -41,6 +41,7 @@ function ProductRail({
           id={id}
           ref={rail}
           className={styles.rail}
+          data-lenis-prevent-horizontal
           tabIndex={0}
           aria-label={`Productos de ${category}`}
           onKeyDown={event => {

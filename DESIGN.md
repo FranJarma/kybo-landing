@@ -241,6 +241,8 @@ Fit complete pages within the available reading area: two open pages when its wi
 
 ### Focus and Motion
 
+The landing uses Lenis for restrained wheel/trackpad smoothing (`lerp: 0.12`) while retaining native touch gestures and the existing CSS anchor behavior/header compensation. Deliberate clicks, pointer input and keyboard actions cancel wheel inertia so native links and focus can take over. The mobile dialog's body lock stops the engine; its scrollable panel and horizontal product rails retain native scrolling. Reduced motion and leaving the landing dispose the engine and its listeners, keeping `/menu` native.
+
 All focus-visible controls use a solid current-color outline (`3px`) with an offset (`6px`). Preserve the skip link. Current color ensures the ring remains visible on both blue and cream fields. The supplied 10-second hero video is the opening focal motion: muted, inline and looped, with a neutral 44px pause/play control. Load and play only while visible; stop when offscreen or the tab is hidden, and preserve explicit pause. Reduced motion and data saving show the still poster until explicit playback. Keep that poster if the video cannot play. Under `prefers-reduced-motion: reduce`, disable CSS animations and transitions, use automatic page scrolling and immediate carousel movement.
 
 ## Do's and Don'ts
