@@ -84,6 +84,7 @@
 }
 .card {
   position: relative;
+  isolation: isolate;
   flex: 0 0 100%;
   min-width: 0;
   display: flex;
@@ -97,6 +98,7 @@
   background: #fffaf0;
   scroll-snap-align: start;
   text-align: center;
+  transition: border-color 140ms ease;
 }
 .cardOutline {
   position: absolute;
@@ -110,11 +112,11 @@
   transition: opacity 140ms ease;
 }
 .cardTrace {
-  width: calc(100% - 2px);
-  height: calc(100% - 2px);
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
   fill: none;
   stroke: var(--product-color);
-  stroke-width: 2;
+  stroke-width: 4;
   stroke-dasharray: 1;
   stroke-dashoffset: 1;
   vector-effect: non-scaling-stroke;
@@ -156,6 +158,9 @@
   transition: transform 350ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 @media (hover: hover) and (pointer: fine) {
+  .card:hover {
+    border-color: transparent;
+  }
   .card:hover .visual img {
     transform: scale(1.045);
   }
@@ -201,7 +206,9 @@
 }
 .previous:disabled,
 .next:disabled {
-  opacity: 0.45;
+  opacity: 1;
+  color: rgb(1 62 94 / 45%);
+  border-color: currentColor;
   cursor: default;
 }
 @media (hover: hover) and (pointer: fine) {
@@ -295,6 +302,7 @@
   }
 }
 @media (prefers-reduced-motion: reduce) {
+  .card,
   .visual img,
   .cardOutline,
   .cardTrace {

@@ -13,7 +13,7 @@ export function ProductCard({ product }: { product: CarouselProduct }) {
       style={{ "--product-color": product.color } as CSSProperties}
     >
       <svg className={styles.cardOutline} aria-hidden="true" focusable="false">
-        <rect className={styles.cardTrace} x="1" y="1" rx="15" pathLength="1" />
+        <rect className={styles.cardTrace} x="2" y="2" rx="14" pathLength="1" />
       </svg>
       <h3>{product.name}</h3>
       <div className={styles.visual}>
